@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>newsImage</key>
+		<string></string>
+		<key>newsTitle</key>
+		<string>111</string>
+		<key>newsDescrip</key>
+		<string>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</string>
+	</dict>
+	<dict>
+		<key>newsImage</key>
+		<string></string>
+		<key>newsTitle</key>
+		<string>222</string>
+		<key>newsDescrip</key>
+		<string>嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</string>
+	</dict>
+	<dict>
+		<key>newsImage</key>
+		<string></string>
+		<key>newsTitle</key>
+		<string></string>
+		<key>newsDescrip</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>newsImage</key>
+		<string></string>
+		<key>newsTitle</key>
+		<string></string>
+		<key>newsDescrip</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>newsImage</key>
+		<string></string>
+		<key>newsTitle</key>
+		<string></string>
+		<key>newsDescrip</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

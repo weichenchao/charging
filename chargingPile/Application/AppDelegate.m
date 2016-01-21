@@ -26,9 +26,11 @@
     //请先启动BaiduMapManager
     self.mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [self.mapManager start:@"weichenchao.chargingPile"  generalDelegate:nil];
+    BOOL ret = [self.mapManager start:@"0kxdGWP4ag1XbdoVqlhm6UYd"  generalDelegate:self];
     if (!ret) {
         NSLog(@"manager start failed!");
+    }else{
+        CPLog(@"manager start success");
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -60,4 +62,32 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark Memory management
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    /*
+     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+     */
+}
+
+- (void)onGetNetworkState:(int)iError
+{
+    if (0 == iError) {
+        NSLog(@"联网成功");
+    }
+    else{
+        NSLog(@"onGetNetworkState %d",iError);
+    }
+    
+}
+
+- (void)onGetPermissionState:(int)iError
+{
+    if (0 == iError) {
+        NSLog(@"授权成功");
+    }
+    else {
+        NSLog(@"onGetPermissionState %d",iError);
+    }
+}
 @end

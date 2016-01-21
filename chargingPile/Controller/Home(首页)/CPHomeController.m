@@ -16,6 +16,9 @@
 #import "CPNewsModel.h"
 #import "CPMacro.h"
 #import "CPConst.h"
+#import "CPSearchController.h"
+#import "PoiSearchDemoViewController.h"
+#import "CPLocationManager.h"
 
  static NSString *cellReuseIdentifier = @"CPHomeCell";
 
@@ -37,10 +40,7 @@
  *当前定位的城市
  */
 @property (nonatomic, copy) NSString *currentLocationCityName;
-/**
- * 定位服务
- */
-@property (nonatomic,strong) BMKLocationService *locService;
+
 @end
 
 @implementation CPHomeController
@@ -52,73 +52,14 @@
     // 监听城市改变
     [CPNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:CPCityDidChangeNotification object:nil];
     //开始定位
-    //初始化BMKLocationService
-    self.locService = [[BMKLocationService alloc]init];
-    self.locService.delegate = self;
-    //启动LocationService
-    [self.locService startUserLocationService];
-    NSLog(@"didUpdateUserLocation lat %f,long %f",self.locService.userLocation.location.coordinate.latitude,self.locService.userLocation.location.coordinate.longitude);
+    CPLocationManager *locationManager =[CPLocationManager sharedInstance];
+    [locationManager startLocation];
+    CPLog(@"%@",locationManager.cityName);
+   
     
    
 }
 
-#pragma mark- 实现定位delegate，处理位置信息更新
-/**
- *  处理方向变更信息
- *  @param data userLocation
- *
- */
-- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
-{
-    NSLog(@"heading is %@",userLocation.heading);
-}
-/**
- *  处理位置坐标更新
- *   @param data  userLocation
- *
- */
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
-
-    //把获取的地理信息记录下来
-    CGFloat localLatitude=self.locService.userLocation.location.coordinate.latitude;
-    CGFloat localLongitude=self.locService.userLocation.location.coordinate.longitude;    
-    CLLocation *loc = [[CLLocation alloc]initWithLatitude:localLatitude longitude:localLongitude];
-    CLGeocoder *geocoder=[[CLGeocoder alloc]init];
-    //根据经纬度转换成当前城市，CLGeocoder反编码
-    [geocoder reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (error||placemarks.count==0) {
-           // NSLog(@"你输入的地址没找到，可能在月球上");
-        }else//编码成功
-        {
-            //取得第一个地标，地标中存储了详细的地址信息，注意：一个地名可能搜索出多个地址
-            CLPlacemark *placemark=[placemarks firstObject];
-            NSString *locality=placemark.locality; // 城市
-            CLLocation *location=placemark.location;//位置
-            CLRegion *region=placemark.region;//区域
-            NSDictionary *addressDic= placemark.addressDictionary;//详细地址信息字典,包含以下部分信息
-//            NSString *name=placemark.name;//地名
-//            NSString *thoroughfare=placemark.thoroughfare;//街道
-//            NSString *subThoroughfare=placemark.subThoroughfare; //街道相关信息，例如门牌等
-//            NSString *subLocality=placemark.subLocality; // 城市相关信息，例如标志性建筑
-//            NSString *administrativeArea=placemark.administrativeArea; // 州
-//            NSString *subAdministrativeArea=placemark.subAdministrativeArea; //其他行政区域信息
-//            NSString *postalCode=placemark.postalCode; //邮编
-//            NSString *ISOcountryCode=placemark.ISOcountryCode; //国家编码
-//            NSString *country=placemark.country; //国家
-//            NSString *inlandWater=placemark.inlandWater; //水源、湖泊
-//            NSString *ocean=placemark.ocean; // 海洋
-//            NSArray *areasOfInterest=placemark.areasOfInterest; //关联的或利益相关的地标
-            //位置不更新，此函数频繁被调用的问题
-           
-            if (![self.currentLocationCityName isEqualToString:locality]) {
-                 self.currentLocationCityName = locality;
-                 //NSLog(@"----位置:%@,区域:%@,详细信息:%@，城市%@",location,region,addressDic,locality);
-                //直接把城市切换成定位的城市
-                 [self.headerView.locationLabelButton setTitle:self.currentLocationCityName forState:UIControlStateNormal];
-            }
-        }
-    }];
-}
 
 //隐藏特定UIViewController的导航栏,在该视图控制器中加入代码
 - (void)viewDidAppear:(BOOL)animated
@@ -148,7 +89,7 @@
 }
 - (void)setingTableHeaderView {
     self.headerView = [[CPHomeHeaderView alloc]init];
-    self.headerView = [[NSBundle mainBundle] loadNibNamed:@"CPHomeHeaderView" owner:nil options:nil][0];
+    self.headerView = [[NSBundle mainBundle] loadNibNamed:@"CPHomeHeaderView" owner:self options:nil][0];
     self.headerView.frame=CGRectMake(0,0,SCREEN_WIDTH,519);
     //设置代理
     self.headerView.myDelegate = self;
@@ -225,7 +166,7 @@
     [self.navigationController pushViewController:cityVC animated:NO];
 }
 - (void)clickChargeButton {
-    CPMapController *mapVC = [[CPMapController alloc]init];
+    CPSearchController *mapVC = [[CPSearchController alloc]init];
     [self.navigationController pushViewController:mapVC animated:NO];
 }
 #pragma mark - notification监听通知

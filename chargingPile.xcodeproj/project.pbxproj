@@ -17,10 +17,17 @@
 		552F21901C3F5CDB00462FC2 /* CPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F218F1C3F5CDB00462FC2 /* CPBaseViewController.m */; };
 		552F21991C3F6ACF00462FC2 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F21981C3F6ACF00462FC2 /* UIView+Extension.m */; };
 		555269981C43519B00D3AE82 /* CPHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 555269971C43519B00D3AE82 /* CPHomeHeaderView.m */; };
-		5552699A1C4351B400D3AE82 /* CPHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555269991C4351B400D3AE82 /* CPHomeHeaderView.xib */; };
 		555269A01C43941000D3AE82 /* CPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5552699F1C43941000D3AE82 /* CPTabBarController.m */; };
 		555269A61C43AE6A00D3AE82 /* CPHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 555269A41C43AE6A00D3AE82 /* CPHomeCell.m */; };
 		555269A71C43AE6A00D3AE82 /* CPHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */; };
+		55C586F21C507ECB003BD81F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F11C507ECB003BD81F /* UIKit.framework */; };
+		55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F31C507ED3003BD81F /* Foundation.framework */; };
+		55C586F81C508245003BD81F /* PoiSearchDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 55C586F51C508245003BD81F /* PoiSearchDemoViewController.mm */; };
+		55C586F91C508245003BD81F /* PoiSearchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C586F71C508245003BD81F /* PoiSearchDemoViewController.xib */; };
+		55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C586FB1C50BE02003BD81F /* CPSearchController.m */; };
+		55C586FE1C50BE02003BD81F /* CPSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C586FC1C50BE02003BD81F /* CPSearchController.xib */; };
+		55C586FF1C50C429003BD81F /* CPHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C587011C50C429003BD81F /* CPHomeHeaderView.xib */; };
+		55C587071C50C7C9003BD81F /* CPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C587061C50C7C9003BD81F /* CPLocationManager.m */; };
 		55E49FD11C4C94C2008E5C75 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E49FA21C4C94C2008E5C75 /* TAAbstractDotView.m */; };
 		55E49FD21C4C94C2008E5C75 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E49FA41C4C94C2008E5C75 /* TAAnimatedDotView.m */; };
 		55E49FD31C4C94C2008E5C75 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E49FA61C4C94C2008E5C75 /* TADotView.m */; };
@@ -108,12 +115,22 @@
 		552F21981C3F6ACF00462FC2 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		555269961C43519B00D3AE82 /* CPHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPHomeHeaderView.h; sourceTree = "<group>"; };
 		555269971C43519B00D3AE82 /* CPHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPHomeHeaderView.m; sourceTree = "<group>"; };
-		555269991C4351B400D3AE82 /* CPHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPHomeHeaderView.xib; sourceTree = "<group>"; };
 		5552699E1C43941000D3AE82 /* CPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTabBarController.h; sourceTree = "<group>"; };
 		5552699F1C43941000D3AE82 /* CPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTabBarController.m; sourceTree = "<group>"; };
 		555269A31C43AE6A00D3AE82 /* CPHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPHomeCell.h; sourceTree = "<group>"; };
 		555269A41C43AE6A00D3AE82 /* CPHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPHomeCell.m; sourceTree = "<group>"; };
 		555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPHomeCell.xib; sourceTree = "<group>"; };
+		55C586F11C507ECB003BD81F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		55C586F31C507ED3003BD81F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		55C586F51C508245003BD81F /* PoiSearchDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PoiSearchDemoViewController.mm; sourceTree = "<group>"; };
+		55C586F61C508245003BD81F /* PoiSearchDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoiSearchDemoViewController.h; sourceTree = "<group>"; };
+		55C586F71C508245003BD81F /* PoiSearchDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoiSearchDemoViewController.xib; sourceTree = "<group>"; };
+		55C586FA1C50BE02003BD81F /* CPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSearchController.h; sourceTree = "<group>"; };
+		55C586FB1C50BE02003BD81F /* CPSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSearchController.m; sourceTree = "<group>"; };
+		55C586FC1C50BE02003BD81F /* CPSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPSearchController.xib; sourceTree = "<group>"; };
+		55C587041C50C432003BD81F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CPHomeHeaderView.xib; sourceTree = "<group>"; };
+		55C587051C50C7C9003BD81F /* CPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLocationManager.h; sourceTree = "<group>"; };
+		55C587061C50C7C9003BD81F /* CPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLocationManager.m; sourceTree = "<group>"; };
 		55E49FA11C4C94C2008E5C75 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		55E49FA21C4C94C2008E5C75 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		55E49FA31C4C94C2008E5C75 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -215,7 +232,6 @@
 		D757B6E61C4D295D00D81E04 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		D757B6E71C4D295D00D81E04 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		D757B6E81C4D295D00D81E04 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
-		D757B6EC1C4D2A2900D81E04 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		D757B6EE1C4D2C7400D81E04 /* CPMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMapController.h; sourceTree = "<group>"; };
 		D757B6F01C4D2C7400D81E04 /* CPMapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPMapController.xib; sourceTree = "<group>"; };
 		D7DE75001C4B62E900DE9BC6 /* CPNoLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNoLoginView.h; sourceTree = "<group>"; };
@@ -231,6 +247,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */,
+				55C586F21C507ECB003BD81F /* UIKit.framework in Frameworks */,
 				55FE0E031C4F5F3B00F62512 /* BaiduMapAPI_Search.framework in Frameworks */,
 				D757B6E31C4D243700D81E04 /* libstdc++.6.0.9.tbd in Frameworks */,
 				D757B6E11C4D242400D81E04 /* CoreTelephony.framework in Frameworks */,
@@ -265,6 +283,12 @@
 				D757B6EE1C4D2C7400D81E04 /* CPMapController.h */,
 				55FE0E001C4F5A4300F62512 /* CPMapController.mm */,
 				D757B6F01C4D2C7400D81E04 /* CPMapController.xib */,
+				55C586F61C508245003BD81F /* PoiSearchDemoViewController.h */,
+				55C586F51C508245003BD81F /* PoiSearchDemoViewController.mm */,
+				55C586F71C508245003BD81F /* PoiSearchDemoViewController.xib */,
+				55C586FA1C50BE02003BD81F /* CPSearchController.h */,
+				55C586FB1C50BE02003BD81F /* CPSearchController.m */,
+				55C586FC1C50BE02003BD81F /* CPSearchController.xib */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -355,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				552F218B1C3F580100462FC2 /* CPMacro.h */,
+				55C587051C50C7C9003BD81F /* CPLocationManager.h */,
+				55C587061C50C7C9003BD81F /* CPLocationManager.m */,
 				55E4A0261C4CCFFB008E5C75 /* CPConst.h */,
 				55E4A0271C4CCFFB008E5C75 /* CPConst.m */,
 			);
@@ -429,7 +455,7 @@
 			children = (
 				555269961C43519B00D3AE82 /* CPHomeHeaderView.h */,
 				555269971C43519B00D3AE82 /* CPHomeHeaderView.m */,
-				555269991C4351B400D3AE82 /* CPHomeHeaderView.xib */,
+				55C587011C50C429003BD81F /* CPHomeHeaderView.xib */,
 				555269A31C43AE6A00D3AE82 /* CPHomeCell.h */,
 				555269A41C43AE6A00D3AE82 /* CPHomeCell.m */,
 				555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */,
@@ -591,8 +617,9 @@
 		D757B6E51C4D295D00D81E04 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				55C586F31C507ED3003BD81F /* Foundation.framework */,
+				55C586F11C507ECB003BD81F /* UIKit.framework */,
 				55FE0E021C4F5F3B00F62512 /* BaiduMapAPI_Search.framework */,
-				D757B6EC1C4D2A2900D81E04 /* mapapi.bundle */,
 				D757B6E01C4D242400D81E04 /* CoreTelephony.framework */,
 				D757B6DE1C4D241500D81E04 /* libsqlite3.0.tbd */,
 				D757B6DC1C4D237B00D81E04 /* Security.framework */,
@@ -667,6 +694,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C586FE1C50BE02003BD81F /* CPSearchController.xib in Resources */,
+				55C586F91C508245003BD81F /* PoiSearchDemoViewController.xib in Resources */,
 				D757B6F21C4D2C7400D81E04 /* CPMapController.xib in Resources */,
 				D7DE75041C4B630700DE9BC6 /* CPNoLoginView.xib in Resources */,
 				55FE0DFB1C4F173B00F62512 /* cities.plist in Resources */,
@@ -674,7 +703,7 @@
 				55FE0DFE1C4F173B00F62512 /* newsList.plist in Resources */,
 				55E49FF51C4CBCE1008E5C75 /* CPCityViewController.xib in Resources */,
 				D7DE75091C4B6FBA00DE9BC6 /* CPLoginController.xib in Resources */,
-				5552699A1C4351B400D3AE82 /* CPHomeHeaderView.xib in Resources */,
+				55C586FF1C50C429003BD81F /* CPHomeHeaderView.xib in Resources */,
 				55FE0DFC1C4F173B00F62512 /* cityGroups.plist in Resources */,
 				55FE0DFD1C4F173B00F62512 /* mapapi.bundle in Resources */,
 				552F216D1C3F4A3A00462FC2 /* Assets.xcassets in Resources */,
@@ -700,12 +729,15 @@
 				55E49FEF1C4CBCD2008E5C75 /* CPNewsModel.m in Sources */,
 				D7DE75081C4B6FBA00DE9BC6 /* CPLoginController.m in Sources */,
 				55E49FDA1C4C94C2008E5C75 /* SDImageCache.m in Sources */,
+				55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */,
 				55FE0E011C4F5A4300F62512 /* CPMapController.mm in Sources */,
+				55C586F81C508245003BD81F /* PoiSearchDemoViewController.mm in Sources */,
 				5513E1C81C48CB3B00758AFD /* CPHomeController.m in Sources */,
 				55E49FE11C4C94C2008E5C75 /* UIButton+WebCache.m in Sources */,
 				55E4A01E1C4CBEB6008E5C75 /* MJIvar.m in Sources */,
 				55E4A01F1C4CBEB6008E5C75 /* MJMember.m in Sources */,
 				55E49FD71C4C94C2008E5C75 /* UIView+SDExtension.m in Sources */,
+				55C587071C50C7C9003BD81F /* CPLocationManager.m in Sources */,
 				55E49FD11C4C94C2008E5C75 /* TAAbstractDotView.m in Sources */,
 				55E49FE41C4C94C2008E5C75 /* UIImage+WebP.m in Sources */,
 				55E4A01B1C4CBEB6008E5C75 /* MJArgument.m in Sources */,
@@ -754,6 +786,14 @@
 				552F216F1C3F4A3A00462FC2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		55C587011C50C429003BD81F /* CPHomeHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55C587041C50C432003BD81F /* en */,
+			);
+			name = CPHomeHeaderView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

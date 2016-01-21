@@ -34,6 +34,7 @@
     //地图显示比例
     [_mapView setZoomLevel:13];
     _mapView.isSelectedAnnotationViewFront = YES;
+    
     //初始化检索对象
     _searcher =[[BMKPoiSearch alloc]init];
     _searcher.delegate = self;

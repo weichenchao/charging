@@ -9,7 +9,7 @@
 #import "CPBaseViewController.h"
 #import "CPHomeHeaderView.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
-#import <BaiduMapAPI_Location/BMKLocationService.h>
-@interface CPHomeController : CPBaseViewController<UITableViewDataSource,UITableViewDelegate,CPHomeHeaderViewDelegate,BMKLocationServiceDelegate>
+
+@interface CPHomeController : CPBaseViewController<UITableViewDataSource,UITableViewDelegate,CPHomeHeaderViewDelegate>
 
 @end

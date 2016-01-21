@@ -17,7 +17,6 @@
 #import "CPMacro.h"
 #import "CPConst.h"
 #import "CPSearchController.h"
-#import "PoiSearchDemoViewController.h"
 #import "CPLocationManager.h"
 
  static NSString *cellReuseIdentifier = @"CPHomeCell";
@@ -49,17 +48,16 @@
     [super viewDidLoad];
     [self setingTableview];
     [self setingTableHeaderView];
-    // 监听城市改变
+    // 监听选择的城市改变
     [CPNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:CPCityDidChangeNotification object:nil];
+    // 监听定位的城市改变
+    [CPNotificationCenter addObserver:self selector:@selector(cityLocationDidChange:) name:CPCityLocationDidChangeNotification object:nil];
     //开始定位
     CPLocationManager *locationManager =[CPLocationManager sharedInstance];
     [locationManager startLocation];
     CPLog(@"%@",locationManager.cityName);
-   
     
-   
 }
-
 
 //隐藏特定UIViewController的导航栏,在该视图控制器中加入代码
 - (void)viewDidAppear:(BOOL)animated
@@ -106,6 +104,8 @@
     loginButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth, 0, -labelWidth);
     loginButton.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWith, 0, imageWith);
     [loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    //切换城市
+    [self.headerView.locationLabelButton setTitle:self.currentLocationCityName forState:UIControlStateNormal];
     [self.headerView addSubview:loginButton];
     //设置scrollView
     [self setingScrollView];
@@ -144,13 +144,6 @@
     }
     return _newsArray;
 }
-//- (NSString *)currentLocationCityName {
-//   
-//    if(self.currentLocationCityName == nil) {
-//        self.currentLocationCityName = [NSString stringWithFormat:@"北京"];
-//    }
-//    return self.currentLocationCityName;
-//}
 #pragma mark -button监听方法
 - (void)clickInformationButton:(UIButton *)button {
     CPInformationController *infoVC= [[CPInformationController alloc]init];
@@ -170,11 +163,18 @@
     [self.navigationController pushViewController:mapVC animated:NO];
 }
 #pragma mark - notification监听通知
+//选择的城市改变
 - (void)cityDidChange:(NSNotification *)notification {
     self.selectedCityName = notification.userInfo[CPSelectCityName];
+    self.currentLocationCityName = self.selectedCityName;
     [self.headerView.locationLabelButton setTitle:self.selectedCityName forState:UIControlStateNormal];
     //[self.tableview reloadData];
-    
+  
+}
+//定位的城市改变
+- (void)cityLocationDidChange:(NSNotification *)notification {
+    self.currentLocationCityName = notification.userInfo[CPLocationCityName];
+    [self.headerView.locationLabelButton setTitle:self.currentLocationCityName forState:UIControlStateNormal];
 }
 #pragma mark -tableview数据源方法
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
@@ -199,7 +199,6 @@
 
 }
 #pragma mark-headerView代理方法
-
 -(void)clickOneSortButton:(UIButton *)button{
     NSLog(@"%@",button);
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
@@ -8,6 +9,7 @@
             <connections>
                 <outlet property="cover" destination="Bd2-ub-wqF" id="ghG-nN-RjD"/>
                 <outlet property="searchBar" destination="KEe-U2-y8c" id="hLK-Py-wd2"/>
+                <outlet property="showLocationButton" destination="OYa-lH-Wjb" id="uew-Yp-war"/>
                 <outlet property="tableView" destination="mCB-vG-1No" id="d2B-pq-rQV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,6 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYa-lH-Wjb">
+                    <rect key="frame" x="15" y="65" width="150" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="aZa-uz-B4K"/>
+                        <constraint firstAttribute="height" constant="44" id="zNT-fk-zRF"/>
+                    </constraints>
+                    <state key="normal" title="当前定位城市 ："/>
+                </button>
                 <searchBar contentMode="redraw" placeholder="请输入城市名或者拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="KEe-U2-y8c">
                     <rect key="frame" x="15" y="15" width="570" height="35"/>
                     <constraints>
@@ -28,7 +38,7 @@
                     </connections>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mCB-vG-1No">
-                    <rect key="frame" x="0.0" y="65" width="600" height="535"/>
+                    <rect key="frame" x="0.0" y="114" width="600" height="486"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="LIC-g2-M5o"/>
@@ -50,10 +60,13 @@
             <constraints>
                 <constraint firstItem="Bd2-ub-wqF" firstAttribute="top" secondItem="KEe-U2-y8c" secondAttribute="bottom" constant="15" id="1F7-6P-ld1"/>
                 <constraint firstItem="KEe-U2-y8c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="1HM-f8-LGA"/>
+                <constraint firstItem="OYa-lH-Wjb" firstAttribute="top" secondItem="KEe-U2-y8c" secondAttribute="bottom" constant="15" id="9TZ-5t-xfO"/>
                 <constraint firstItem="Bd2-ub-wqF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fn8-3P-mdw"/>
                 <constraint firstAttribute="trailing" secondItem="KEe-U2-y8c" secondAttribute="trailing" constant="15" id="Gjm-vP-dBp"/>
                 <constraint firstAttribute="bottom" secondItem="Bd2-ub-wqF" secondAttribute="bottom" id="LgG-Ay-dDF"/>
                 <constraint firstAttribute="trailing" secondItem="Bd2-ub-wqF" secondAttribute="trailing" id="QGw-iN-6f1"/>
+                <constraint firstItem="mCB-vG-1No" firstAttribute="top" secondItem="KEe-U2-y8c" secondAttribute="bottom" constant="64" id="QKT-Tu-IFC"/>
+                <constraint firstItem="OYa-lH-Wjb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="UEc-an-iJF"/>
                 <constraint firstAttribute="bottom" secondItem="mCB-vG-1No" secondAttribute="bottom" id="kIK-W5-bXv"/>
                 <constraint firstItem="mCB-vG-1No" firstAttribute="top" secondItem="KEe-U2-y8c" secondAttribute="bottom" constant="15" id="m1H-qw-5yH"/>
                 <constraint firstItem="KEe-U2-y8c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="nEC-Rj-Hzy"/>
@@ -61,6 +74,11 @@
                 <constraint firstItem="mCB-vG-1No" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xaS-br-lLa"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="m1H-qw-5yH"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="371" y="338"/>
         </view>
     </objects>

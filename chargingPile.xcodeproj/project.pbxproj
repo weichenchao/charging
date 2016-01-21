@@ -22,12 +22,11 @@
 		555269A71C43AE6A00D3AE82 /* CPHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */; };
 		55C586F21C507ECB003BD81F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F11C507ECB003BD81F /* UIKit.framework */; };
 		55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F31C507ED3003BD81F /* Foundation.framework */; };
-		55C586F81C508245003BD81F /* PoiSearchDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 55C586F51C508245003BD81F /* PoiSearchDemoViewController.mm */; };
-		55C586F91C508245003BD81F /* PoiSearchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C586F71C508245003BD81F /* PoiSearchDemoViewController.xib */; };
 		55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C586FB1C50BE02003BD81F /* CPSearchController.m */; };
 		55C586FE1C50BE02003BD81F /* CPSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C586FC1C50BE02003BD81F /* CPSearchController.xib */; };
 		55C586FF1C50C429003BD81F /* CPHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C587011C50C429003BD81F /* CPHomeHeaderView.xib */; };
 		55C587071C50C7C9003BD81F /* CPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C587061C50C7C9003BD81F /* CPLocationManager.m */; };
+		55C5870A1C50F465003BD81F /* CPChargingStopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C587091C50F465003BD81F /* CPChargingStopModel.m */; };
 		55E49FD11C4C94C2008E5C75 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E49FA21C4C94C2008E5C75 /* TAAbstractDotView.m */; };
 		55E49FD21C4C94C2008E5C75 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E49FA41C4C94C2008E5C75 /* TAAnimatedDotView.m */; };
 		55E49FD31C4C94C2008E5C75 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E49FA61C4C94C2008E5C75 /* TADotView.m */; };
@@ -122,15 +121,14 @@
 		555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPHomeCell.xib; sourceTree = "<group>"; };
 		55C586F11C507ECB003BD81F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55C586F31C507ED3003BD81F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		55C586F51C508245003BD81F /* PoiSearchDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PoiSearchDemoViewController.mm; sourceTree = "<group>"; };
-		55C586F61C508245003BD81F /* PoiSearchDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoiSearchDemoViewController.h; sourceTree = "<group>"; };
-		55C586F71C508245003BD81F /* PoiSearchDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoiSearchDemoViewController.xib; sourceTree = "<group>"; };
 		55C586FA1C50BE02003BD81F /* CPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSearchController.h; sourceTree = "<group>"; };
 		55C586FB1C50BE02003BD81F /* CPSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSearchController.m; sourceTree = "<group>"; };
 		55C586FC1C50BE02003BD81F /* CPSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPSearchController.xib; sourceTree = "<group>"; };
 		55C587041C50C432003BD81F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CPHomeHeaderView.xib; sourceTree = "<group>"; };
 		55C587051C50C7C9003BD81F /* CPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLocationManager.h; sourceTree = "<group>"; };
 		55C587061C50C7C9003BD81F /* CPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLocationManager.m; sourceTree = "<group>"; };
+		55C587081C50F465003BD81F /* CPChargingStopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPChargingStopModel.h; path = chargingPile/Helper/CPChargingStopModel.h; sourceTree = SOURCE_ROOT; };
+		55C587091C50F465003BD81F /* CPChargingStopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPChargingStopModel.m; path = chargingPile/Helper/CPChargingStopModel.m; sourceTree = SOURCE_ROOT; };
 		55E49FA11C4C94C2008E5C75 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		55E49FA21C4C94C2008E5C75 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		55E49FA31C4C94C2008E5C75 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -283,9 +281,6 @@
 				D757B6EE1C4D2C7400D81E04 /* CPMapController.h */,
 				55FE0E001C4F5A4300F62512 /* CPMapController.mm */,
 				D757B6F01C4D2C7400D81E04 /* CPMapController.xib */,
-				55C586F61C508245003BD81F /* PoiSearchDemoViewController.h */,
-				55C586F51C508245003BD81F /* PoiSearchDemoViewController.mm */,
-				55C586F71C508245003BD81F /* PoiSearchDemoViewController.xib */,
 				55C586FA1C50BE02003BD81F /* CPSearchController.h */,
 				55C586FB1C50BE02003BD81F /* CPSearchController.m */,
 				55C586FC1C50BE02003BD81F /* CPSearchController.xib */,
@@ -476,6 +471,8 @@
 		5569AC0E1C4752DA0072F470 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				55C587081C50F465003BD81F /* CPChargingStopModel.h */,
+				55C587091C50F465003BD81F /* CPChargingStopModel.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -695,7 +692,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C586FE1C50BE02003BD81F /* CPSearchController.xib in Resources */,
-				55C586F91C508245003BD81F /* PoiSearchDemoViewController.xib in Resources */,
 				D757B6F21C4D2C7400D81E04 /* CPMapController.xib in Resources */,
 				D7DE75041C4B630700DE9BC6 /* CPNoLoginView.xib in Resources */,
 				55FE0DFB1C4F173B00F62512 /* cities.plist in Resources */,
@@ -731,7 +727,6 @@
 				55E49FDA1C4C94C2008E5C75 /* SDImageCache.m in Sources */,
 				55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */,
 				55FE0E011C4F5A4300F62512 /* CPMapController.mm in Sources */,
-				55C586F81C508245003BD81F /* PoiSearchDemoViewController.mm in Sources */,
 				5513E1C81C48CB3B00758AFD /* CPHomeController.m in Sources */,
 				55E49FE11C4C94C2008E5C75 /* UIButton+WebCache.m in Sources */,
 				55E4A01E1C4CBEB6008E5C75 /* MJIvar.m in Sources */,
@@ -740,6 +735,7 @@
 				55C587071C50C7C9003BD81F /* CPLocationManager.m in Sources */,
 				55E49FD11C4C94C2008E5C75 /* TAAbstractDotView.m in Sources */,
 				55E49FE41C4C94C2008E5C75 /* UIImage+WebP.m in Sources */,
+				55C5870A1C50F465003BD81F /* CPChargingStopModel.m in Sources */,
 				55E4A01B1C4CBEB6008E5C75 /* MJArgument.m in Sources */,
 				55E4A01C1C4CBEB6008E5C75 /* MJConst.m in Sources */,
 				555269A61C43AE6A00D3AE82 /* CPHomeCell.m in Sources */,

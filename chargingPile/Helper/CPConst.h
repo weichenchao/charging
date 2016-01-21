@@ -10,3 +10,5 @@
 extern NSString *const CPCityDidChangeNotification;
 extern NSString *const CPSelectCityName;
 
+extern NSString *const CPCityLocationDidChangeNotification;
+extern NSString *const CPLocationCityName;

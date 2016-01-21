@@ -16,6 +16,7 @@
 const int MTCoverTag = 999;
 
 @interface CPCityViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *showLocationButton;
 @property (nonatomic, strong) NSArray *cityGroups;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *cover;
@@ -52,7 +53,8 @@ const int MTCoverTag = 999;
     
     // 加载城市数据
     self.cityGroups = [CPCityGroup objectArrayWithFilename:@"cityGroups.plist"];
-    
+    // 监听定位的城市改变
+    [CPNotificationCenter addObserver:self selector:@selector(cityLocationDidChange:) name:CPCityLocationDidChangeNotification object:nil];
    
 }
 
@@ -60,7 +62,12 @@ const int MTCoverTag = 999;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+//定位的城市改变
+- (void)cityLocationDidChange:(NSNotification *)notification {
+    
+    [self.showLocationButton setTitle:notification.userInfo[CPLocationCityName]forState:UIControlStateNormal];
+    NSLog(@"-----%@",notification.userInfo[CPLocationCityName]);
+}
 #pragma mark - 搜索框代理方法
 /**
  *  键盘弹出:搜索框开始编辑文字

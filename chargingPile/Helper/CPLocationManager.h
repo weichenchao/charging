@@ -7,6 +7,8 @@
 //  将定位封装了一个独立的manager类来管理定位和地图上滑动到的位置，是将定位功能和地图mapVIew独立开来，管理地理移动位置的变化
 
 #import <Foundation/Foundation.h>
+#import "CPMacro.h"
+#import "CPConst.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationService.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>

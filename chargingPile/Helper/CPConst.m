@@ -12,3 +12,5 @@
 NSString *const CPCityDidChangeNotification = @"CPCityDidChangeNotification";
 NSString *const CPSelectCityName = @"CPSelectCityName";
 
+NSString *const CPCityLocationDidChangeNotification = @"CPCityLocationDidChangeNotification";
+NSString *const CPLocationCityName = @"CPLocationCityName";

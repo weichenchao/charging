@@ -9,6 +9,7 @@
 #import "CPTabBarController.h"
 #import "CPBaseNavigationController.h"
 #import "CPHomeController.h"
+#import "CPTopicController.h"
 #import "CPMacro.h"
 
 @interface CPTabBarController ()
@@ -38,8 +39,27 @@
     [homeVC.tabBarItem setTitleTextAttributes:textSelected forState:UIControlStateSelected];
     CPBaseNavigationController *homeNaviVC = [[CPBaseNavigationController alloc]initWithRootViewController:homeVC];
     
-    NSArray *controllers=[NSArray arrayWithObjects:homeNaviVC,nil];
-    self.viewControllers=controllers;
+    
+    CPTopicController *topicVC =[[CPTopicController alloc]init];
+    //设置tabbarItem的图片
+    topicVC.tabBarItem.image=[UIImage imageNamed:@"home_normal"];
+    //取消图片渲染
+    // homeVC.tabBarItem.selectedImage=[[UIImage  imageNamed:@"home_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    //设置文字颜色
+    topicVC.tabBarItem.title=@"话题";
+    NSMutableDictionary *textNormal1=[NSMutableDictionary dictionary];
+    textNormal1[NSForegroundColorAttributeName]=UIColorFromRGB(0x888888);
+    [homeVC.tabBarItem setTitleTextAttributes:textNormal1 forState:UIControlStateNormal];
+    
+    //设置选中状态文字颜色
+    NSMutableDictionary *textSelected1=[NSMutableDictionary dictionary];
+    textSelected1[NSForegroundColorAttributeName]=UIColorFromRGB(0x00abf3);
+    [homeVC.tabBarItem setTitleTextAttributes:textSelected1 forState:UIControlStateSelected];
+    CPBaseNavigationController *topivNaviVC = [[CPBaseNavigationController alloc]initWithRootViewController:topicVC];
+    
+    NSArray *controllers = [NSArray arrayWithObjects:homeNaviVC,topivNaviVC,nil];
+    self.viewControllers = controllers;
     
 }
 

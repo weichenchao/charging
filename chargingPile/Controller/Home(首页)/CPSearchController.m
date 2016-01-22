@@ -7,7 +7,7 @@
 //
 
 #import "CPSearchController.h"
-#import "CPChargingStopModel.h"
+
 #import "CPLocationManager.h"
 @interface CPSearchController ()
 @property (nonatomic,strong) BMKMapView* mapView;
@@ -192,9 +192,9 @@
     if (cell == nil) {
         cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellll"];
     }
-    CPChargingStopModel *model = [[CPChargingStopModel alloc]init];
-    model = _chargingStopModelArray[indexPath.row];
-    cell.textLabel.text =model.name;
+//    CPChargingStopModel *model = [[CPChargingStopModel alloc]init];
+//    model = _chargingStopModelArray[indexPath.row];
+//    cell.textLabel.text =model.name;
     return  cell;
 }
 #pragma mark implement BMKMapViewDelegate
@@ -271,10 +271,10 @@
             item.title = poi.name;
             [annotations addObject:item];
             
-            CPChargingStopModel *model = [[CPChargingStopModel alloc]init];
-            model.name = poi.name;
-            [self.chargingStopModelArray addObject:model];
-            
+//            CPChargingStopModel *model = [[CPChargingStopModel alloc]init];
+//            model.name = poi.name;
+//            [self.chargingStopModelArray addObject:model];
+           
         }
         [self.tableView reloadData];
         [_mapView addAnnotations:annotations];

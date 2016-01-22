@@ -159,8 +159,9 @@
     [self.navigationController pushViewController:cityVC animated:NO];
 }
 - (void)clickChargeButton {
-    CPSearchController *mapVC = [[CPSearchController alloc]init];
-    [self.navigationController pushViewController:mapVC animated:NO];
+    CPMapController *mapVC1 = [[CPMapController alloc]init];
+    //CPSearchController *mapVC = [[CPSearchController alloc]init];
+    [self.navigationController pushViewController:mapVC1 animated:NO];
 }
 #pragma mark - notification监听通知
 //选择的城市改变

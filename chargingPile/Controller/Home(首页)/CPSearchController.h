@@ -8,9 +8,10 @@
 
 #import "CPBaseViewController.h"
 #import <UIKit/UIKit.h>
+#import "CPLocationManager.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
-@interface CPSearchController : CPBaseViewController<BMKMapViewDelegate, BMKPoiSearchDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface CPSearchController : CPBaseViewController<BMKMapViewDelegate, BMKPoiSearchDelegate,UITableViewDataSource,UITableViewDelegate,BMKLocationServiceDelegate>
 
 @end

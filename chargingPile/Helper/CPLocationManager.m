@@ -69,6 +69,7 @@
  */
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
+     
      CLLocation *cllocation = userLocation.location;
    
     _userLatitude = cllocation.coordinate.latitude;

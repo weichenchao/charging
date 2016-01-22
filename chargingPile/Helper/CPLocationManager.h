@@ -29,7 +29,9 @@
 //用户位置
 @property (strong,nonatomic) CLLocation *clloction;
 
-
+/*
+ *要使用CPLocationManager，还是得在使用的controller里面遵守BMKLocationServiceDelegate
+*/
 //初始化单例
 + (CPLocationManager *)sharedInstance;
 

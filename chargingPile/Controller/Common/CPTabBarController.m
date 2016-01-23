@@ -42,9 +42,9 @@
     
     CPTopicController *topicVC =[[CPTopicController alloc]init];
     //设置tabbarItem的图片
-    topicVC.tabBarItem.image=[UIImage imageNamed:@"home_normal"];
+    topicVC.tabBarItem.image=[UIImage imageNamed:@"tab_topic"];
     //取消图片渲染
-    // homeVC.tabBarItem.selectedImage=[[UIImage  imageNamed:@"home_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+     topicVC.tabBarItem.selectedImage=[[UIImage  imageNamed:@"tab_topic_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //设置文字颜色
     topicVC.tabBarItem.title=@"话题";

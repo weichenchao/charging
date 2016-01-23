@@ -7,9 +7,17 @@
 //
 
 #import "CPTopicController.h"
+#import "CPTopicMainCell.h"
 #import "CPMacro.h"
+static NSString *cellReuseIdentifier = @"CPTopicMainCell";
 @interface CPTopicController ()
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray * cellModelArray;
+/*
+ *根据加载的cell数据，创建对应的cell高度，如果cell是有图片的，cellHeightArray对应添加一个106元素
+ *看微博项目（34.cell数据    首页15-计算原创微博的frame -10分）
+ */
+@property (nonatomic,strong) NSMutableArray *cellHeightArray;
 @end
 
 @implementation CPTopicController
@@ -17,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.title = @"话题";
-    
+    _cellHeightArray = [[NSMutableArray alloc]initWithObjects:@180,@108,@180,@108,@180, nil];
     [self addTheTableView];
     [self addTheHeader];
     
@@ -26,7 +34,14 @@
     self.tableView =[[UITableView alloc]initWithFrame:CGRectMake(0,0 , self.view.bounds.size.width, self.view.bounds.size.height-64)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    //取消垂直滚动条
+    self.tableView.showsVerticalScrollIndicator = NO;
+    //取消分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     [self.view addSubview:self.tableView];
+    UINib *nib =[UINib nibWithNibName:@"CPTopicMainCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:nib forCellReuseIdentifier:cellReuseIdentifier];
     
 }
 -(void)addTheHeader {
@@ -53,8 +68,9 @@
     //[self.navigationController setValue:toolbar forKey:@"toolbar"];
    
     self.navigationItem.titleView = toolbar;
-    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"11" style:UIBarButtonItemStylePlain target:self action:@selector(bar)];
-    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"22" style:UIBarButtonItemStylePlain target:self action:@selector(bar)];
+    
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"topic_new"] style:UIBarButtonItemStylePlain target:self action:nil];
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"topic_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(bar)];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     
@@ -71,23 +87,52 @@
     UIGraphicsEndImageContext();
     return img;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSMutableArray *)cellModelArray {
+    if (_cellModelArray == nil) {
+        _cellModelArray = [[NSMutableArray alloc]init];
+        
+    }
+    
+    return _cellModelArray;
 }
 -(void)bar {
     
 }
 #pragma mark -tableView数据源方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return 5;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell =[self.tableView dequeueReusableCellWithIdentifier:@"CPTopicControllerCell"];
+-(CPTopicMainCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    CPTopicMainCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
     if (cell == nil) {
-        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CPTopicControllerCell"];
+        cell = [[CPTopicMainCell alloc]init];
+        //取消选中
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+        
     }
-
+    //cell偶数有图片，高度188；无图片138
+    if (indexPath.row%2 == 0) {
+        CPTopicBasicModel *model = [[CPTopicBasicModel alloc]init];
+        
+        model.type =CPTopicBasicModelStylePicture;
+        cell.bounds =CGRectMake(0, 0, self.view.bounds.size.width, 180);
+        cell.model = model;
+        
+    }else{
+        CPTopicBasicModel *model1 = [[CPTopicBasicModel alloc]init];
+        
+        model1.type = CPTopicBasicModelStyleDefault;
+        cell.bounds =CGRectMake(0, 0, self.view.bounds.size.width, 108);
+        cell.model = model1;
+    }
+    cell.bounds =CGRectMake(0, 0, self.view.bounds.size.width, 180);
     return  cell;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSNumber *numb =_cellHeightArray[indexPath.row];
+    CGFloat number =[numb doubleValue];
+    return number;
+}
+
 @end

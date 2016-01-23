@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5511E57C1C522DA500625D5C /* CPNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5511E5751C522DA500625D5C /* CPNewsModel.m */; };
-		5511E57D1C522DA500625D5C /* CPCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5511E5781C522DA500625D5C /* CPCity.m */; };
-		5511E57E1C522DA500625D5C /* CPCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5511E57A1C522DA500625D5C /* CPCityGroup.m */; };
 		5511E5851C522FF600625D5C /* CPTopicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5511E5841C522FF600625D5C /* CPTopicController.m */; };
 		5511E5891C5233FB00625D5C /* CPTopicMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5511E5871C5233FB00625D5C /* CPTopicMainCell.m */; };
 		5511E58A1C5233FB00625D5C /* CPTopicMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5511E5881C5233FB00625D5C /* CPTopicMainCell.xib */; };
@@ -77,6 +74,11 @@
 		55FE0E011C4F5A4300F62512 /* CPMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 55FE0E001C4F5A4300F62512 /* CPMapController.mm */; };
 		55FE0E031C4F5F3B00F62512 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FE0E021C4F5F3B00F62512 /* BaiduMapAPI_Search.framework */; };
 		D72CED871C5348BB00061C8D /* CPLoginWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED861C5348BB00061C8D /* CPLoginWebController.m */; };
+		D72CED911C5370B000061C8D /* CPCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED8B1C5370B000061C8D /* CPCity.m */; };
+		D72CED921C5370B000061C8D /* CPCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED8D1C5370B000061C8D /* CPCityGroup.m */; };
+		D72CED931C5370B000061C8D /* CPNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED8F1C5370B000061C8D /* CPNewsModel.m */; };
+		D72CED961C5370F200061C8D /* CPTopicBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED951C5370F200061C8D /* CPTopicBasicModel.m */; };
+		D72CED9C1C53743A00061C8D /* CPTopicPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED9B1C53743A00061C8D /* CPTopicPictureModel.m */; };
 		D757B6D31C4D232200D81E04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B6D21C4D232200D81E04 /* CoreLocation.framework */; };
 		D757B6D51C4D233000D81E04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B6D41C4D233000D81E04 /* CoreGraphics.framework */; };
 		D757B6D71C4D234A00D81E04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B6D61C4D234A00D81E04 /* SystemConfiguration.framework */; };
@@ -95,12 +97,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5511E5741C522DA500625D5C /* CPNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPNewsModel.h; path = ../CPNewsModel.h; sourceTree = "<group>"; };
-		5511E5751C522DA500625D5C /* CPNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPNewsModel.m; path = ../CPNewsModel.m; sourceTree = "<group>"; };
-		5511E5771C522DA500625D5C /* CPCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCity.h; sourceTree = "<group>"; };
-		5511E5781C522DA500625D5C /* CPCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCity.m; sourceTree = "<group>"; };
-		5511E5791C522DA500625D5C /* CPCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCityGroup.h; sourceTree = "<group>"; };
-		5511E57A1C522DA500625D5C /* CPCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCityGroup.m; sourceTree = "<group>"; };
 		5511E5831C522FF600625D5C /* CPTopicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTopicController.h; sourceTree = "<group>"; };
 		5511E5841C522FF600625D5C /* CPTopicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTopicController.m; sourceTree = "<group>"; };
 		5511E5861C5233FB00625D5C /* CPTopicMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTopicMainCell.h; sourceTree = "<group>"; };
@@ -224,6 +220,16 @@
 		55FE0E021C4F5F3B00F62512 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		D72CED851C5348BB00061C8D /* CPLoginWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLoginWebController.h; sourceTree = "<group>"; };
 		D72CED861C5348BB00061C8D /* CPLoginWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLoginWebController.m; sourceTree = "<group>"; };
+		D72CED8A1C5370B000061C8D /* CPCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCity.h; sourceTree = "<group>"; };
+		D72CED8B1C5370B000061C8D /* CPCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCity.m; sourceTree = "<group>"; };
+		D72CED8C1C5370B000061C8D /* CPCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCityGroup.h; sourceTree = "<group>"; };
+		D72CED8D1C5370B000061C8D /* CPCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCityGroup.m; sourceTree = "<group>"; };
+		D72CED8E1C5370B000061C8D /* CPNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNewsModel.h; sourceTree = "<group>"; };
+		D72CED8F1C5370B000061C8D /* CPNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNewsModel.m; sourceTree = "<group>"; };
+		D72CED941C5370F200061C8D /* CPTopicBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTopicBasicModel.h; sourceTree = "<group>"; };
+		D72CED951C5370F200061C8D /* CPTopicBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTopicBasicModel.m; sourceTree = "<group>"; };
+		D72CED9A1C53743A00061C8D /* CPTopicPictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTopicPictureModel.h; sourceTree = "<group>"; };
+		D72CED9B1C53743A00061C8D /* CPTopicPictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTopicPictureModel.m; sourceTree = "<group>"; };
 		D757B6D21C4D232200D81E04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D757B6D41C4D233000D81E04 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D757B6D61C4D234A00D81E04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -274,35 +280,6 @@
 			children = (
 				5511E5831C522FF600625D5C /* CPTopicController.h */,
 				5511E5841C522FF600625D5C /* CPTopicController.m */,
-			);
-			path = "Topic(话题)";
-			sourceTree = "<group>";
-		};
-		5511E5731C522DA500625D5C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5511E5761C522DA500625D5C /* Home */,
-				5511E57B1C522DA500625D5C /* Topic(话题) */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5511E5761C522DA500625D5C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				5511E5741C522DA500625D5C /* CPNewsModel.h */,
-				5511E5751C522DA500625D5C /* CPNewsModel.m */,
-				5511E5771C522DA500625D5C /* CPCity.h */,
-				5511E5781C522DA500625D5C /* CPCity.m */,
-				5511E5791C522DA500625D5C /* CPCityGroup.h */,
-				5511E57A1C522DA500625D5C /* CPCityGroup.m */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		5511E57B1C522DA500625D5C /* Topic(话题) */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = "Topic(话题)";
 			sourceTree = "<group>";
@@ -358,9 +335,8 @@
 		552F215F1C3F4A3A00462FC2 /* chargingPile */ = {
 			isa = PBXGroup;
 			children = (
-				D72CED841C5347E500061C8D /* Login(登录) */,
+				D72CED881C5370B000061C8D /* Model */,
 				552F217B1C3F544200462FC2 /* Controller */,
-				5511E5731C522DA500625D5C /* Model */,
 				D757B6E51C4D295D00D81E04 /* Framework */,
 				552F21821C3F544200462FC2 /* View */,
 				552F21771C3F544200462FC2 /* Application */,
@@ -407,6 +383,7 @@
 		552F217B1C3F544200462FC2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D72CED841C5347E500061C8D /* Login(登录) */,
 				5511E5721C522D1300625D5C /* Topic(话题) */,
 				5513E1C31C48CB3B00758AFD /* Home(首页) */,
 				552F21851C3F564900462FC2 /* Base */,
@@ -612,8 +589,40 @@
 				D72CED851C5348BB00061C8D /* CPLoginWebController.h */,
 				D72CED861C5348BB00061C8D /* CPLoginWebController.m */,
 			);
-			name = "Login(登录)";
-			path = "Controller/Login(登录)";
+			path = "Login(登录)";
+			sourceTree = "<group>";
+		};
+		D72CED881C5370B000061C8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D72CED891C5370B000061C8D /* Home */,
+				D72CED901C5370B000061C8D /* Topic */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D72CED891C5370B000061C8D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D72CED8A1C5370B000061C8D /* CPCity.h */,
+				D72CED8B1C5370B000061C8D /* CPCity.m */,
+				D72CED8C1C5370B000061C8D /* CPCityGroup.h */,
+				D72CED8D1C5370B000061C8D /* CPCityGroup.m */,
+				D72CED8E1C5370B000061C8D /* CPNewsModel.h */,
+				D72CED8F1C5370B000061C8D /* CPNewsModel.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D72CED901C5370B000061C8D /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				D72CED941C5370F200061C8D /* CPTopicBasicModel.h */,
+				D72CED951C5370F200061C8D /* CPTopicBasicModel.m */,
+				D72CED9A1C53743A00061C8D /* CPTopicPictureModel.h */,
+				D72CED9B1C53743A00061C8D /* CPTopicPictureModel.m */,
+			);
+			path = Topic;
 			sourceTree = "<group>";
 		};
 		D757B6E51C4D295D00D81E04 /* Framework */ = {
@@ -744,6 +753,9 @@
 				555269A01C43941000D3AE82 /* CPTabBarController.m in Sources */,
 				5513E1C91C48CB3B00758AFD /* CPInformationController.m in Sources */,
 				5511E5891C5233FB00625D5C /* CPTopicMainCell.m in Sources */,
+				D72CED921C5370B000061C8D /* CPCityGroup.m in Sources */,
+				D72CED911C5370B000061C8D /* CPCity.m in Sources */,
+				D72CED961C5370F200061C8D /* CPTopicBasicModel.m in Sources */,
 				55E49FE21C4C94C2008E5C75 /* UIImage+GIF.m in Sources */,
 				55E4A0251C4CBEB6008E5C75 /* NSObject+MJMember.m in Sources */,
 				55E49FE71C4C94C2008E5C75 /* UIView+WebCacheOperation.m in Sources */,
@@ -757,23 +769,22 @@
 				55E4A0201C4CBEB6008E5C75 /* MJMethod.m in Sources */,
 				55E4A01D1C4CBEB6008E5C75 /* MJFoundation.m in Sources */,
 				55E49FDE1C4C94C2008E5C75 /* SDWebImageDownloaderOperation.m in Sources */,
-				5511E57D1C522DA500625D5C /* CPCity.m in Sources */,
 				55E49FD81C4C94C2008E5C75 /* MKAnnotationView+WebCache.m in Sources */,
-				5511E57E1C522DA500625D5C /* CPCityGroup.m in Sources */,
 				D7DE75021C4B62E900DE9BC6 /* CPNoLoginView.m in Sources */,
 				D72CED871C5348BB00061C8D /* CPLoginWebController.m in Sources */,
 				55E4A0241C4CBEB6008E5C75 /* NSObject+MJKeyValue.m in Sources */,
 				552F21991C3F6ACF00462FC2 /* UIView+Extension.m in Sources */,
 				55E49FD41C4C94C2008E5C75 /* TAPageControl.m in Sources */,
 				552F21621C3F4A3A00462FC2 /* main.m in Sources */,
+				D72CED931C5370B000061C8D /* CPNewsModel.m in Sources */,
 				55E49FDD1C4C94C2008E5C75 /* SDWebImageDownloader.m in Sources */,
 				55E49FD31C4C94C2008E5C75 /* TADotView.m in Sources */,
+				D72CED9C1C53743A00061C8D /* CPTopicPictureModel.m in Sources */,
 				552F21901C3F5CDB00462FC2 /* CPBaseViewController.m in Sources */,
 				55E4A0281C4CCFFB008E5C75 /* CPConst.m in Sources */,
 				55E4A0221C4CBEB6008E5C75 /* MJTypeEncoding.m in Sources */,
 				55E49FE61C4C94C2008E5C75 /* UIImageView+WebCache.m in Sources */,
 				552F218A1C3F568B00462FC2 /* CPBaseNavigationController.m in Sources */,
-				5511E57C1C522DA500625D5C /* CPNewsModel.m in Sources */,
 				55E49FD51C4C94C2008E5C75 /* SDCollectionViewCell.m in Sources */,
 				55E4A0021C4CBD87008E5C75 /* CPCitySearchResultViewController.m in Sources */,
 			);

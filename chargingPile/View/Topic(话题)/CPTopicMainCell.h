@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CPTopicBasicModel.h"
 @interface CPTopicMainCell : UITableViewCell
-
+@property (nonatomic,strong) CPTopicBasicModel *model;
 @end

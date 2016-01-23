@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,49 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOH-A1-qqB" userLabel="locationView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bm6-yK-Ptk" userLabel="locationIconButton">
-                            <rect key="frame" x="20" y="10" width="18" height="24"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="vRE-6z-CJU"/>
-                                <constraint firstAttribute="width" constant="18" id="ygJ-c2-Pj2"/>
-                            </constraints>
-                            <state key="normal" title="Button" image="location_54X72"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-Hs-raB" userLabel="infomationButton">
-                            <rect key="frame" x="336" y="10" width="24" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="24" id="IuB-9G-GS8"/>
-                                <constraint firstAttribute="height" constant="24" id="TTf-en-AR7"/>
-                            </constraints>
-                            <state key="normal" image="msg72X72"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld0-cp-QoO" userLabel="locationLabelButton">
-                            <rect key="frame" x="48" y="11" width="60" height="22"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="5ic-y2-8zU"/>
-                                <constraint firstAttribute="height" constant="22" id="ozX-UR-FsK"/>
-                            </constraints>
-                            <state key="normal" title="厦门市">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.6705882352941176" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Bm6-yK-Ptk" firstAttribute="leading" secondItem="LOH-A1-qqB" secondAttribute="leading" constant="20" id="4KZ-lH-ZyW"/>
-                        <constraint firstItem="Bm6-yK-Ptk" firstAttribute="centerY" secondItem="LOH-A1-qqB" secondAttribute="centerY" id="BdH-9U-FbE"/>
-                        <constraint firstAttribute="trailing" secondItem="OrO-Hs-raB" secondAttribute="trailing" constant="15" id="K4X-X2-IMX"/>
-                        <constraint firstItem="Ld0-cp-QoO" firstAttribute="centerY" secondItem="LOH-A1-qqB" secondAttribute="centerY" id="KTo-iI-m8m"/>
-                        <constraint firstItem="OrO-Hs-raB" firstAttribute="centerY" secondItem="LOH-A1-qqB" secondAttribute="centerY" id="LgN-bn-Fp3"/>
-                        <constraint firstItem="Ld0-cp-QoO" firstAttribute="leading" secondItem="Bm6-yK-Ptk" secondAttribute="trailing" constant="10" id="a2D-3f-iFD"/>
-                        <constraint firstAttribute="height" constant="44" id="jKI-S7-D9U"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hY-Qg-3RC" userLabel="personInfoView">
                     <rect key="frame" x="0.0" y="44" width="375" height="90"/>
                     <subviews>
@@ -457,6 +413,49 @@
                             <exclude reference="7Ju-rd-DgR"/>
                         </mask>
                     </variation>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOH-A1-qqB" userLabel="locationView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bm6-yK-Ptk" userLabel="locationIconButton">
+                            <rect key="frame" x="20" y="10" width="18" height="24"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="vRE-6z-CJU"/>
+                                <constraint firstAttribute="width" constant="18" id="ygJ-c2-Pj2"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="location_54X72"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-Hs-raB" userLabel="infomationButton">
+                            <rect key="frame" x="336" y="10" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="IuB-9G-GS8"/>
+                                <constraint firstAttribute="height" constant="24" id="TTf-en-AR7"/>
+                            </constraints>
+                            <state key="normal" image="msg72X72"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld0-cp-QoO" userLabel="locationLabelButton">
+                            <rect key="frame" x="48" y="11" width="60" height="22"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="5ic-y2-8zU"/>
+                                <constraint firstAttribute="height" constant="22" id="ozX-UR-FsK"/>
+                            </constraints>
+                            <state key="normal" title="厦门市">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.6705882352941176" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Bm6-yK-Ptk" firstAttribute="leading" secondItem="LOH-A1-qqB" secondAttribute="leading" constant="20" id="4KZ-lH-ZyW"/>
+                        <constraint firstItem="Bm6-yK-Ptk" firstAttribute="centerY" secondItem="LOH-A1-qqB" secondAttribute="centerY" id="BdH-9U-FbE"/>
+                        <constraint firstAttribute="trailing" secondItem="OrO-Hs-raB" secondAttribute="trailing" constant="15" id="K4X-X2-IMX"/>
+                        <constraint firstItem="Ld0-cp-QoO" firstAttribute="centerY" secondItem="LOH-A1-qqB" secondAttribute="centerY" id="KTo-iI-m8m"/>
+                        <constraint firstItem="OrO-Hs-raB" firstAttribute="centerY" secondItem="LOH-A1-qqB" secondAttribute="centerY" id="LgN-bn-Fp3"/>
+                        <constraint firstItem="Ld0-cp-QoO" firstAttribute="leading" secondItem="Bm6-yK-Ptk" secondAttribute="trailing" constant="10" id="a2D-3f-iFD"/>
+                        <constraint firstAttribute="height" constant="44" id="jKI-S7-D9U"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

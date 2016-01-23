@@ -76,6 +76,7 @@
 		55FE0DFE1C4F173B00F62512 /* newsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55FE0DFA1C4F173B00F62512 /* newsList.plist */; };
 		55FE0E011C4F5A4300F62512 /* CPMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 55FE0E001C4F5A4300F62512 /* CPMapController.mm */; };
 		55FE0E031C4F5F3B00F62512 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FE0E021C4F5F3B00F62512 /* BaiduMapAPI_Search.framework */; };
+		D72CED871C5348BB00061C8D /* CPLoginWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72CED861C5348BB00061C8D /* CPLoginWebController.m */; };
 		D757B6D31C4D232200D81E04 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B6D21C4D232200D81E04 /* CoreLocation.framework */; };
 		D757B6D51C4D233000D81E04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B6D41C4D233000D81E04 /* CoreGraphics.framework */; };
 		D757B6D71C4D234A00D81E04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757B6D61C4D234A00D81E04 /* SystemConfiguration.framework */; };
@@ -91,8 +92,6 @@
 		D757B6F21C4D2C7400D81E04 /* CPMapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757B6F01C4D2C7400D81E04 /* CPMapController.xib */; };
 		D7DE75021C4B62E900DE9BC6 /* CPNoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE75011C4B62E900DE9BC6 /* CPNoLoginView.m */; };
 		D7DE75041C4B630700DE9BC6 /* CPNoLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DE75031C4B630700DE9BC6 /* CPNoLoginView.xib */; };
-		D7DE75081C4B6FBA00DE9BC6 /* CPLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE75061C4B6FBA00DE9BC6 /* CPLoginController.m */; };
-		D7DE75091C4B6FBA00DE9BC6 /* CPLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DE75071C4B6FBA00DE9BC6 /* CPLoginController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +222,8 @@
 		55FE0DFA1C4F173B00F62512 /* newsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = newsList.plist; sourceTree = "<group>"; };
 		55FE0E001C4F5A4300F62512 /* CPMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPMapController.mm; sourceTree = "<group>"; tabWidth = 5; };
 		55FE0E021C4F5F3B00F62512 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		D72CED851C5348BB00061C8D /* CPLoginWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLoginWebController.h; sourceTree = "<group>"; };
+		D72CED861C5348BB00061C8D /* CPLoginWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLoginWebController.m; sourceTree = "<group>"; };
 		D757B6D21C4D232200D81E04 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D757B6D41C4D233000D81E04 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D757B6D61C4D234A00D81E04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -240,9 +241,6 @@
 		D7DE75001C4B62E900DE9BC6 /* CPNoLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNoLoginView.h; sourceTree = "<group>"; };
 		D7DE75011C4B62E900DE9BC6 /* CPNoLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNoLoginView.m; sourceTree = "<group>"; };
 		D7DE75031C4B630700DE9BC6 /* CPNoLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPNoLoginView.xib; sourceTree = "<group>"; };
-		D7DE75051C4B6FBA00DE9BC6 /* CPLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLoginController.h; sourceTree = "<group>"; };
-		D7DE75061C4B6FBA00DE9BC6 /* CPLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLoginController.m; sourceTree = "<group>"; };
-		D7DE75071C4B6FBA00DE9BC6 /* CPLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPLoginController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +358,7 @@
 		552F215F1C3F4A3A00462FC2 /* chargingPile */ = {
 			isa = PBXGroup;
 			children = (
+				D72CED841C5347E500061C8D /* Login(登录) */,
 				552F217B1C3F544200462FC2 /* Controller */,
 				5511E5731C522DA500625D5C /* Model */,
 				D757B6E51C4D295D00D81E04 /* Framework */,
@@ -467,9 +466,6 @@
 			children = (
 				5552699E1C43941000D3AE82 /* CPTabBarController.h */,
 				5552699F1C43941000D3AE82 /* CPTabBarController.m */,
-				D7DE75051C4B6FBA00DE9BC6 /* CPLoginController.h */,
-				D7DE75061C4B6FBA00DE9BC6 /* CPLoginController.m */,
-				D7DE75071C4B6FBA00DE9BC6 /* CPLoginController.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -610,6 +606,16 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		D72CED841C5347E500061C8D /* Login(登录) */ = {
+			isa = PBXGroup;
+			children = (
+				D72CED851C5348BB00061C8D /* CPLoginWebController.h */,
+				D72CED861C5348BB00061C8D /* CPLoginWebController.m */,
+			);
+			name = "Login(登录)";
+			path = "Controller/Login(登录)";
+			sourceTree = "<group>";
+		};
 		D757B6E51C4D295D00D81E04 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,7 +704,6 @@
 				552F21701C3F4A3A00462FC2 /* LaunchScreen.storyboard in Resources */,
 				55FE0DFE1C4F173B00F62512 /* newsList.plist in Resources */,
 				55E49FF51C4CBCE1008E5C75 /* CPCityViewController.xib in Resources */,
-				D7DE75091C4B6FBA00DE9BC6 /* CPLoginController.xib in Resources */,
 				55C586FF1C50C429003BD81F /* CPHomeHeaderView.xib in Resources */,
 				55FE0DFC1C4F173B00F62512 /* cityGroups.plist in Resources */,
 				55FE0DFD1C4F173B00F62512 /* mapapi.bundle in Resources */,
@@ -721,7 +726,6 @@
 				55E4A0211C4CBEB6008E5C75 /* MJType.m in Sources */,
 				55E49FE01C4C94C2008E5C75 /* SDWebImagePrefetcher.m in Sources */,
 				55E49FF61C4CBCE1008E5C75 /* CPCityViewController.m in Sources */,
-				D7DE75081C4B6FBA00DE9BC6 /* CPLoginController.m in Sources */,
 				55E49FDA1C4C94C2008E5C75 /* SDImageCache.m in Sources */,
 				55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */,
 				55FE0E011C4F5A4300F62512 /* CPMapController.mm in Sources */,
@@ -757,6 +761,7 @@
 				55E49FD81C4C94C2008E5C75 /* MKAnnotationView+WebCache.m in Sources */,
 				5511E57E1C522DA500625D5C /* CPCityGroup.m in Sources */,
 				D7DE75021C4B62E900DE9BC6 /* CPNoLoginView.m in Sources */,
+				D72CED871C5348BB00061C8D /* CPLoginWebController.m in Sources */,
 				55E4A0241C4CBEB6008E5C75 /* NSObject+MJKeyValue.m in Sources */,
 				552F21991C3F6ACF00462FC2 /* UIView+Extension.m in Sources */,
 				55E49FD41C4C94C2008E5C75 /* TAPageControl.m in Sources */,
@@ -885,7 +890,7 @@
 					"$(PROJECT_DIR)/chargingPile/Framework",
 				);
 				INFOPLIST_FILE = chargingPile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = weichenchao.chargingPile;
@@ -903,7 +908,7 @@
 					"$(PROJECT_DIR)/chargingPile/Framework",
 				);
 				INFOPLIST_FILE = chargingPile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = weichenchao.chargingPile;

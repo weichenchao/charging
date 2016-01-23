@@ -11,13 +11,13 @@
 #import "CPCityViewController.h"
 #import "CPMapController.h"
 #import "SDCycleScrollView.h"
-#import "CPLoginController.h"
 #import "CPHomeCell.h"
 #import "CPNewsModel.h"
 #import "CPMacro.h"
 #import "CPConst.h"
 #import "CPSearchController.h"
 #import "CPLocationManager.h"
+#import "CPLoginWebController.h"
 
  static NSString *cellReuseIdentifier = @"CPHomeCell";
 
@@ -151,7 +151,7 @@
     [self.navigationController pushViewController:infoVC animated:NO];
 }
 - (void)login {
-    CPLoginController *loginVC = [[CPLoginController alloc]init];
+    CPLoginWebController *loginVC = [[CPLoginWebController alloc]init];
     [self.navigationController pushViewController:loginVC animated:NO];
 }
 - (void)clickLocationButton {

@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <BaiduMapAPI_Base/BMKBaseComponent.h>
-#import <BaiduMapAPI_Map/BMKMapComponent.h>
-#import <BaiduMapAPI_Location/BMKLocationService.h>
-#import <BaiduMapAPI_Search/BMKSearchComponent.h>
-@interface CPMapController : UIViewController<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+#import "CPMapBasicController.h"
+@interface CPMapController : CPMapBasicController<UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @end

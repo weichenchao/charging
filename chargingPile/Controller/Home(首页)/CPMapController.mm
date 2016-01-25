@@ -7,12 +7,11 @@
 //
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
 #import "CPMapController.h"
+#import "CPGuideController.h"
 #import "CPChargingStopModel.h"
+#import "CPMacro.h"
 @interface CPMapController ()
-@property (nonatomic,strong) BMKMapView* mapView;
-@property (nonatomic,strong) BMKLocationService *locService;
-@property (nonatomic,strong) BMKPoiSearch *searcher;
-@property (nonatomic,strong) BMKUserLocation *userLocation;
+
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *chargingStopModelArray;
 @property (nonatomic,strong) NSArray *sortedArray;
@@ -27,31 +26,18 @@
     self.chargingStopModelArray = [[NSMutableArray alloc]init];
     
     [self addCitySeacrh];
-    [self addLocationSevice];
+   
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [_mapView viewWillAppear];
-   
-    _mapView.delegate = self;
-    _locService.delegate = self;
-}
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [_mapView viewWillDisappear];
-    _mapView.delegate = nil; // 不用时，置nil
-    _locService.delegate = nil;
-    _searcher.delegate = nil;
-}
+
 //添加地图视图
 - (void)addmapview {
     BMKMapView* mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     self.mapView = mapView;
     [self.view addSubview:self.mapView];
-    _mapView.isSelectedAnnotationViewFront = YES;
+    self.mapView.isSelectedAnnotationViewFront = YES;
     //地图比例尺显示
-    _mapView.showMapScaleBar = YES;
+    self.mapView.showMapScaleBar = YES;
 }
 //添加tableview
 - (void)addtableview {
@@ -60,37 +46,24 @@
     self.tableView.dataSource =self;
     //添加头部
     UIView *header =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
-    header.backgroundColor = [UIColor greenColor];
+    header.backgroundColor = UIColorFromRGB(0x00abf3);
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, self.view.bounds.size.width, 22)];
-    label.text = [NSString stringWithFormat:@"找到充电桩%lu",(unsigned long)self.chargingStopModelArray.count];
+    label.textColor = [UIColor whiteColor];
+    label.text = [NSString stringWithFormat:@"找到充电桩---共%lu个",(unsigned long)self.chargingStopModelArray.count];
     [header addSubview:label];
     self.tableView.tableHeaderView = header;
-    //添加向上的手势
-//    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(verticalUp)];
-//    recognizer.delegate = self;
-//    [recognizer setDirection:UISwipeGestureRecognizerDirectionUp];
-//    [self.tableView addGestureRecognizer:recognizer];
     self.recognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
     self.recognizer.delegate = self;
     [self.tableView addGestureRecognizer:self.recognizer];
     [self.view addSubview:self.tableView];
     
 }
-//添加定位服务
-- (void)addLocationSevice {
-    _locService = [[BMKLocationService alloc]init];
-    //显示定位的蓝点儿必须先开启定位服务
-    [_locService startUserLocationService];
-    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
-    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态，地图模式
-    //显示定位的蓝点儿
-    _mapView.showsUserLocation = YES;
-}
+
 //添加城市搜索
 - (void)addCitySeacrh {
     //初始化检索对象
-    _searcher =[[BMKPoiSearch alloc]init];
-    _searcher.delegate = self;
+    self.searcher =[[BMKPoiSearch alloc]init];
+    self.searcher.delegate = self;
     //发起检索
     BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
     citySearchOption.pageIndex = 0;
@@ -98,7 +71,7 @@
     citySearchOption.pageCapacity = 50;
     citySearchOption.city= @"厦门";
     citySearchOption.keyword = @"充电";
-    BOOL flag = [_searcher poiSearchInCity:citySearchOption];
+    BOOL flag = [self.searcher poiSearchInCity:citySearchOption];
     if(flag)
     {
         NSLog(@"城市内检索发送成功");
@@ -107,9 +80,6 @@
     {
         NSLog(@"城市内检索发送失败");
     }
-}
--(void)verticalUp {
-    [self.tableView setFrame:self.view.bounds];
 }
 //tableview跟着鼠标移动，往上往下运动，x轴不变;地图y轴也跟着变化
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
@@ -135,17 +105,6 @@
     }
 }
 
-#pragma mark -设置定位圆点属性
--(void)setUserImage
-{
-    //用户位置类
-    BMKLocationViewDisplayParam* param = [[BMKLocationViewDisplayParam alloc] init];
-    param.locationViewOffsetY = 0;//偏移量
-    param.locationViewOffsetX = 0;
-    param.isAccuracyCircleShow =NO;//设置是否显示定位的那个精度圈
-    param.isRotateAngleValid = NO;
-    [_mapView updateLocationViewWithParam:param];
-}
 #pragma mark implement BMKMapViewDelegate
 /**
  *根据anntation生成对应的View
@@ -211,11 +170,12 @@
             model.uid = poi.uid;
             model.name = poi.name;
             model.address = poi.address;
+            model.locationCoordinate2D = poi.pt;
             model.distance = [NSNumber numberWithDouble:distance];
             [self.chargingStopModelArray addObject:model];
         }
-        [_mapView addAnnotations:annotations];
-        [_mapView showAnnotations:annotations animated:YES];
+        [self.mapView addAnnotations:annotations];
+        [self.mapView showAnnotations:annotations animated:YES];
         //对数组排序，按距离升序排序
         NSArray *sortedArray  = [self.chargingStopModelArray sortedArrayUsingComparator:^NSComparisonResult(CPChargingStopModel *p1, CPChargingStopModel *p2){
             return [p1.distance compare:p2.distance];
@@ -232,70 +192,13 @@
         NSLog(@"抱歉，未找到结果");
     }
 
-    _mapView.centerCoordinate = CLLocationCoordinate2DMake(24.495484, 118.184263);
-    _mapView.zoomLevel = 15;
-    _mapView.showsUserLocation = YES;//显示定位图层
-    [_mapView updateLocationData:self.userLocation];
+    self.mapView.centerCoordinate = CLLocationCoordinate2DMake(24.495484, 118.184263);
+    self.mapView.zoomLevel = 15;
+    self.mapView.showsUserLocation = YES;//显示定位图层
+    [self.mapView updateLocationData:self.userLocation];
 
 }
-#pragma mark -定位服务代理
-/**
- *在地图View将要启动定位时，会调用此函数
- *@param mapView 地图View
- */
-- (void)willStartLocatingUser
-{
-    NSLog(@"start locate");
-}
 
-/**
- *用户方向更新后，会调用此函数
- *@param userLocation 新的用户位置
- */
-- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
-{    //动态更新我的位置数，这句话可以让定位小蓝点出来
-    //[_mapView updateLocationData:userLocation];
-    NSLog(@"heading is %@",userLocation.heading);
-}
-
-/**
- *用户位置更新后，会调用此函数
- *@param userLocation 新的用户位置
- */
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
-{
-    _mapView.showsUserLocation = YES;//显示定位图层
-    self.userLocation = userLocation;
-    //动态更新我的位置数，必须有这句话，可以让定位小蓝点出来,但是也有这句话导致地图不能移动
-    //[_mapView updateLocationData:userLocation];
-}
-/**
- *在地图View停止定位后，会调用此函数
- *@param mapView 地图View
- */
-- (void)didStopLocatingUser
-{
-    NSLog(@"stop locate");
-}
-
-/**
- *定位失败后，会调用此函数
- *@param mapView 地图View
- *@param error 错误号，参考CLError.h中定义的错误号
- */
-- (void)didFailToLocateUserWithError:(NSError *)error
-{
-    NSLog(@"location error");
-    NSLog(@"%@",error);
-}
-
-
-- (void)dealloc {
-    if (_mapView) {
-        _mapView = nil;
-        
-    }
-}
 #pragma mark implement tableView数据源方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.sortedArray.count;
@@ -307,12 +210,16 @@
         }
     CPChargingStopModel *model = self.sortedArray[indexPath.row];
     NSNumber *num =model.distance;
-    NSString *str =[NSString stringWithFormat:@"%f米--%@",[num doubleValue],model.name];
+    NSString *str =[NSString stringWithFormat:@"%d米--%@",[num intValue],model.name];
     cell.textLabel.text = str;
     cell.detailTextLabel.text = model.address;
     return  cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     CPChargingStopModel *model = self.sortedArray[indexPath.row];
+    CPGuideController *guideVC = [[CPGuideController alloc]init];
+    guideVC.model = model;
+    [self.navigationController pushViewController:guideVC animated:YES];
 }
 @end

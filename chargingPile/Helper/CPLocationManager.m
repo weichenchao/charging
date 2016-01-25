@@ -61,7 +61,7 @@
  */
 - (void)willStartLocatingUser
 {
-    NSLog(@"start locate");
+    NSLog(@" CPLocationManager--start locate");
 }
 /**
  *用户位置更新后，会调用此函数

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CPChargingStopModel : NSObject
 /*
@@ -29,5 +30,5 @@
  *离用户当前位置的地理距离
  */
 @property (nonatomic,strong)  NSNumber *distance;
-
+@property (nonatomic) CLLocationCoordinate2D locationCoordinate2D;
 @end

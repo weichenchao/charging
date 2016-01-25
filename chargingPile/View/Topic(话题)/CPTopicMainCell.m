@@ -8,20 +8,13 @@
 
 #import "CPTopicMainCell.h"
 @interface CPTopicMainCell()
-//第一模块
-@property (weak, nonatomic) IBOutlet UIView *mainView;
-//第一模块
-@property (weak, nonatomic) IBOutlet UIView *firstView;
-//第一模块
-@property (weak, nonatomic) IBOutlet UIView *secondView;
-//第一模块
-@property (weak, nonatomic) IBOutlet UIView *imageViews;
+
 
 @end
 @implementation CPTopicMainCell
 
 - (void)awakeFromNib {
-    
+    [self addGesture];
     
 }
 - (void)setModel:(CPTopicBasicModel *)model {
@@ -40,5 +33,29 @@
     }else{
         [self.imageViews setHidden:YES];
     }
+}
+- (void)addGesture {
+    UITapGestureRecognizer *tapMainGesturRecognizer=[[UITapGestureRecognizer alloc]init];
+    [tapMainGesturRecognizer setNumberOfTapsRequired:1];
+    [tapMainGesturRecognizer addTarget:self action:@selector(addMainViewGestureTarget)];
+    [self.mainView addGestureRecognizer:tapMainGesturRecognizer];
+    UITapGestureRecognizer *tapAuthorGesturRecognizer=[[UITapGestureRecognizer alloc]init];
+    [tapAuthorGesturRecognizer setNumberOfTapsRequired:1];
+    [tapAuthorGesturRecognizer addTarget:self action:@selector(addAuthorViewGestureTarget)];
+    [self.firstView addGestureRecognizer:tapAuthorGesturRecognizer];
+}
+- (void)addMainViewGestureTarget {
+
+    if ([_myDelegate respondsToSelector:@selector(addMainViewGesture)]) {
+        [_myDelegate addMainViewGesture];
+    }
+   
+}
+- (void)addAuthorViewGestureTarget {
+    
+    if ([_myDelegate respondsToSelector:@selector(addAuthorViewGesture)]) {
+        [_myDelegate addAuthorViewGesture];
+    }
+    
 }
 @end

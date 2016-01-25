@@ -7,7 +7,7 @@
 //
 
 #import "CPTopicController.h"
-#import "CPTopicMainCell.h"
+#import "CPForumController.h"
 #import "CPMacro.h"
 static NSString *cellReuseIdentifier = @"CPTopicMainCell";
 @interface CPTopicController ()
@@ -25,9 +25,11 @@ static NSString *cellReuseIdentifier = @"CPTopicMainCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.title = @"话题";
-    _cellHeightArray = [[NSMutableArray alloc]initWithObjects:@180,@108,@180,@108,@180, nil];
+    _cellHeightArray = [[NSMutableArray alloc]initWithObjects:@183,@111,@183,@111,@183, nil];
     [self addTheTableView];
     [self addTheHeader];
+    
+    
     
 }
 -(void)addTheTableView {
@@ -98,6 +100,18 @@ static NSString *cellReuseIdentifier = @"CPTopicMainCell";
 -(void)bar {
     
 }
+#pragma mark -cell点击事件
+//点击cell
+-(void)addMainViewGesture {
+    NSLog(@"main.............");
+    CPForumController *forumVC =[[CPForumController alloc]init];
+    [self.navigationController pushViewController:forumVC animated:NO];
+    
+}
+//点击作者头像
+-(void)addAuthorViewGesture {
+    NSLog(@"author.............");
+}
 #pragma mark -tableView数据源方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 5;
@@ -107,10 +121,12 @@ static NSString *cellReuseIdentifier = @"CPTopicMainCell";
     CPTopicMainCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
     if (cell == nil) {
         cell = [[CPTopicMainCell alloc]init];
-        //取消选中
-        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+
         
     }
+    //关闭选中
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.myDelegate = self;
     //cell偶数有图片，高度188；无图片138
     if (indexPath.row%2 == 0) {
         CPTopicBasicModel *model = [[CPTopicBasicModel alloc]init];

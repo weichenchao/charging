@@ -23,6 +23,9 @@
 		555269A01C43941000D3AE82 /* CPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5552699F1C43941000D3AE82 /* CPTabBarController.m */; };
 		555269A61C43AE6A00D3AE82 /* CPHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 555269A41C43AE6A00D3AE82 /* CPHomeCell.m */; };
 		555269A71C43AE6A00D3AE82 /* CPHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */; };
+		555F44D11C55AB4A009429B9 /* CPWheat.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F44D01C55AB4A009429B9 /* CPWheat.m */; };
+		555F44D31C55B39D009429B9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555F44D21C55B39D009429B9 /* JavaScriptCore.framework */; };
+		555F44D61C55D2A8009429B9 /* CPForumController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F44D51C55D2A8009429B9 /* CPForumController.m */; };
 		55C586F21C507ECB003BD81F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F11C507ECB003BD81F /* UIKit.framework */; };
 		55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F31C507ED3003BD81F /* Foundation.framework */; };
 		55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C586FB1C50BE02003BD81F /* CPSearchController.m */; };
@@ -127,6 +130,11 @@
 		555269A31C43AE6A00D3AE82 /* CPHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPHomeCell.h; sourceTree = "<group>"; };
 		555269A41C43AE6A00D3AE82 /* CPHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPHomeCell.m; sourceTree = "<group>"; };
 		555269A51C43AE6A00D3AE82 /* CPHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPHomeCell.xib; sourceTree = "<group>"; };
+		555F44CF1C55AB4A009429B9 /* CPWheat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPWheat.h; sourceTree = "<group>"; };
+		555F44D01C55AB4A009429B9 /* CPWheat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPWheat.m; sourceTree = "<group>"; };
+		555F44D21C55B39D009429B9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		555F44D41C55D2A8009429B9 /* CPForumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPForumController.h; sourceTree = "<group>"; };
+		555F44D51C55D2A8009429B9 /* CPForumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPForumController.m; sourceTree = "<group>"; };
 		55C586F11C507ECB003BD81F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55C586F31C507ED3003BD81F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		55C586FA1C50BE02003BD81F /* CPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSearchController.h; sourceTree = "<group>"; };
@@ -254,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555F44D31C55B39D009429B9 /* JavaScriptCore.framework in Frameworks */,
 				55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */,
 				55C586F21C507ECB003BD81F /* UIKit.framework in Frameworks */,
 				55FE0E031C4F5F3B00F62512 /* BaiduMapAPI_Search.framework in Frameworks */,
@@ -280,6 +289,8 @@
 			children = (
 				5511E5831C522FF600625D5C /* CPTopicController.h */,
 				5511E5841C522FF600625D5C /* CPTopicController.m */,
+				555F44D41C55D2A8009429B9 /* CPForumController.h */,
+				555F44D51C55D2A8009429B9 /* CPForumController.m */,
 			);
 			path = "Topic(话题)";
 			sourceTree = "<group>";
@@ -407,6 +418,8 @@
 				55C587061C50C7C9003BD81F /* CPLocationManager.m */,
 				55E4A0261C4CCFFB008E5C75 /* CPConst.h */,
 				55E4A0271C4CCFFB008E5C75 /* CPConst.m */,
+				555F44CF1C55AB4A009429B9 /* CPWheat.h */,
+				555F44D01C55AB4A009429B9 /* CPWheat.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -628,6 +641,7 @@
 		D757B6E51C4D295D00D81E04 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				555F44D21C55B39D009429B9 /* JavaScriptCore.framework */,
 				55C586F31C507ED3003BD81F /* Foundation.framework */,
 				55C586F11C507ECB003BD81F /* UIKit.framework */,
 				55FE0E021C4F5F3B00F62512 /* BaiduMapAPI_Search.framework */,
@@ -758,8 +772,10 @@
 				D72CED961C5370F200061C8D /* CPTopicBasicModel.m in Sources */,
 				55E49FE21C4C94C2008E5C75 /* UIImage+GIF.m in Sources */,
 				55E4A0251C4CBEB6008E5C75 /* NSObject+MJMember.m in Sources */,
+				555F44D61C55D2A8009429B9 /* CPForumController.m in Sources */,
 				55E49FE71C4C94C2008E5C75 /* UIView+WebCacheOperation.m in Sources */,
 				55E49FD61C4C94C2008E5C75 /* SDCycleScrollView.m in Sources */,
+				555F44D11C55AB4A009429B9 /* CPWheat.m in Sources */,
 				555269981C43519B00D3AE82 /* CPHomeHeaderView.m in Sources */,
 				55E4A0231C4CBEB6008E5C75 /* NSObject+MJCoding.m in Sources */,
 				55E49FE31C4C94C2008E5C75 /* UIImage+MultiFormat.m in Sources */,

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "CPWheat.h"
 
-@interface CPLoginWebController : UIViewController
+@interface CPLoginWebController : UIViewController<UIWebViewDelegate,WheatProtocol>
 
 @end

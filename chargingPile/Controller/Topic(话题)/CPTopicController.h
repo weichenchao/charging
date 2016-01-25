@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CPTopicController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "CPTopicMainCell.h"
+@interface CPTopicController : UIViewController<UITableViewDataSource,UITableViewDelegate,CPTopicMainCellDelegate>
 
 @end

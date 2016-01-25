@@ -14,7 +14,7 @@
 
 @end
 
-@interface CPWheat : NSObject
+@interface CPWheat : NSObject<WheatProtocol>
 + (CPWheat *)sharedInstance;
 @property(nonatomic, copy) void(^login)(void);
 @end

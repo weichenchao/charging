@@ -53,9 +53,9 @@
     // 监听定位的城市改变
     [CPNotificationCenter addObserver:self selector:@selector(cityLocationDidChange:) name:CPCityLocationDidChangeNotification object:nil];
     //开始定位
-    CPLocationManager *locationManager =[CPLocationManager sharedInstance];
-    [locationManager startLocation];
-    CPLog(@"%@",locationManager.cityName);
+//    CPLocationManager *locationManager =[CPLocationManager sharedInstance];
+//    [locationManager startLocation];
+//    CPLog(@"%@",locationManager.cityName);
     
 }
 

@@ -33,6 +33,11 @@
         CPLog(@"manager start success");
     }
     
+    //初始化导航SDK
+    [BNCoreServices_Instance initServices:@"0kxdGWP4ag1XbdoVqlhm6UYd"];
+    [BNCoreServices_Instance startServicesAsyn:nil fail:nil];
+
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:[[CPTabBarController alloc] init]];
     [self.window makeKeyAndVisible];

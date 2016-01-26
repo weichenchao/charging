@@ -37,7 +37,7 @@
     [self.view addSubview:self.mapView];
     self.mapView.isSelectedAnnotationViewFront = YES;
     //地图比例尺显示
-    self.mapView.showMapScaleBar = YES;
+    //self.mapView.showMapScaleBar = YES;
 }
 //添加tableview
 - (void)addtableview {
@@ -194,8 +194,9 @@
 
     self.mapView.centerCoordinate = CLLocationCoordinate2DMake(24.495484, 118.184263);
     self.mapView.zoomLevel = 15;
-    self.mapView.showsUserLocation = YES;//显示定位图层
+    //self.mapView.showsUserLocation = YES;//显示定位图层
     [self.mapView updateLocationData:self.userLocation];
+    NSLog(@"self.userLocation.location%@",self.userLocation.location);
 
 }
 

@@ -61,7 +61,7 @@
  */
 - (void)willStartLocatingUser
 {
-    NSLog(@"CPMapBasicController -start locate");
+    NSLog(@"---CPMapBasicController -start locate");
 }
 
 /**
@@ -82,8 +82,9 @@
 {
     self.mapView.showsUserLocation = YES;//显示定位图层
     self.userLocation = userLocation;
+    //NSLog(@"location%@",userLocation.location);
     //动态更新我的位置数，必须有这句话，可以让定位小蓝点出来,但是也有这句话导致地图不能移动
-    //[_mapView updateLocationData:userLocation];
+    [_mapView updateLocationData:userLocation];
 }
 /**
  *在地图View停止定位后，会调用此函数

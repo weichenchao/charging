@@ -51,7 +51,7 @@
  *  关闭定位服务
  */
 -(void)stopLocation
-{
+{   
     [_locService stopUserLocationService];
 }
 #pragma BMKLocationServiceDelegate,定位的代理方法

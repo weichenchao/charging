@@ -145,15 +145,15 @@
 		555F44E01C562356009429B9 /* CPMapBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMapBasicController.m; sourceTree = "<group>"; };
 		555F44E21C56249D009429B9 /* CPGuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGuideController.h; sourceTree = "<group>"; };
 		555F44E31C56249D009429B9 /* CPGuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGuideController.m; sourceTree = "<group>"; };
-		5561D1711C589B1E00545F26 /* BNCommonDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCommonDef.h; sourceTree = "<group>"; };
-		5561D1721C589B1E00545F26 /* BNCoreServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCoreServices.h; sourceTree = "<group>"; };
-		5561D1731C589B1E00545F26 /* BNLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocation.h; sourceTree = "<group>"; };
-		5561D1741C589B1E00545F26 /* BNLocationManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocationManagerProtocol.h; sourceTree = "<group>"; };
-		5561D1751C589B1E00545F26 /* BNRoutePlanManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRoutePlanManagerProtocol.h; sourceTree = "<group>"; };
-		5561D1761C589B1E00545F26 /* BNRoutePlanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRoutePlanModel.h; sourceTree = "<group>"; };
-		5561D1771C589B1E00545F26 /* BNSoundEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNSoundEventProtocol.h; sourceTree = "<group>"; };
-		5561D1781C589B1E00545F26 /* BNStrategyManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNStrategyManagerProtocol.h; sourceTree = "<group>"; };
-		5561D1791C589B1E00545F26 /* BNUIManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUIManagerProtocol.h; sourceTree = "<group>"; };
+		5561D17D1C589C0700545F26 /* BNCommonDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCommonDef.h; sourceTree = "<group>"; };
+		5561D17E1C589C0700545F26 /* BNCoreServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCoreServices.h; sourceTree = "<group>"; };
+		5561D17F1C589C0700545F26 /* BNLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocation.h; sourceTree = "<group>"; };
+		5561D1801C589C0700545F26 /* BNLocationManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocationManagerProtocol.h; sourceTree = "<group>"; };
+		5561D1811C589C0700545F26 /* BNRoutePlanManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRoutePlanManagerProtocol.h; sourceTree = "<group>"; };
+		5561D1821C589C0700545F26 /* BNRoutePlanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRoutePlanModel.h; sourceTree = "<group>"; };
+		5561D1831C589C0700545F26 /* BNSoundEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNSoundEventProtocol.h; sourceTree = "<group>"; };
+		5561D1841C589C0700545F26 /* BNStrategyManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNStrategyManagerProtocol.h; sourceTree = "<group>"; };
+		5561D1851C589C0700545F26 /* BNUIManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUIManagerProtocol.h; sourceTree = "<group>"; };
 		55C586F11C507ECB003BD81F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55C586F31C507ED3003BD81F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		55C586FA1C50BE02003BD81F /* CPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSearchController.h; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 		552F215F1C3F4A3A00462FC2 /* chargingPile */ = {
 			isa = PBXGroup;
 			children = (
-				5561D1701C589B1E00545F26 /* inc */,
+				5561D17B1C589C0700545F26 /* Navi */,
 				552F217D1C3F544200462FC2 /* Helper */,
 				D72CED881C5370B000061C8D /* Model */,
 				552F217B1C3F544200462FC2 /* Controller */,
@@ -499,18 +499,26 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		5561D1701C589B1E00545F26 /* inc */ = {
+		5561D17B1C589C0700545F26 /* Navi */ = {
 			isa = PBXGroup;
 			children = (
-				5561D1711C589B1E00545F26 /* BNCommonDef.h */,
-				5561D1721C589B1E00545F26 /* BNCoreServices.h */,
-				5561D1731C589B1E00545F26 /* BNLocation.h */,
-				5561D1741C589B1E00545F26 /* BNLocationManagerProtocol.h */,
-				5561D1751C589B1E00545F26 /* BNRoutePlanManagerProtocol.h */,
-				5561D1761C589B1E00545F26 /* BNRoutePlanModel.h */,
-				5561D1771C589B1E00545F26 /* BNSoundEventProtocol.h */,
-				5561D1781C589B1E00545F26 /* BNStrategyManagerProtocol.h */,
-				5561D1791C589B1E00545F26 /* BNUIManagerProtocol.h */,
+				5561D17C1C589C0700545F26 /* inc */,
+			);
+			path = Navi;
+			sourceTree = "<group>";
+		};
+		5561D17C1C589C0700545F26 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				5561D17D1C589C0700545F26 /* BNCommonDef.h */,
+				5561D17E1C589C0700545F26 /* BNCoreServices.h */,
+				5561D17F1C589C0700545F26 /* BNLocation.h */,
+				5561D1801C589C0700545F26 /* BNLocationManagerProtocol.h */,
+				5561D1811C589C0700545F26 /* BNRoutePlanManagerProtocol.h */,
+				5561D1821C589C0700545F26 /* BNRoutePlanModel.h */,
+				5561D1831C589C0700545F26 /* BNSoundEventProtocol.h */,
+				5561D1841C589C0700545F26 /* BNStrategyManagerProtocol.h */,
+				5561D1851C589C0700545F26 /* BNUIManagerProtocol.h */,
 			);
 			path = inc;
 			sourceTree = "<group>";

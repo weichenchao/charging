@@ -30,6 +30,7 @@
 		555F44DB1C56138C009429B9 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555F44DA1C56138C009429B9 /* BaiduMapAPI_Utils.framework */; };
 		555F44E11C562356009429B9 /* CPMapBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F44E01C562356009429B9 /* CPMapBasicController.m */; };
 		555F44E41C56249D009429B9 /* CPGuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F44E31C56249D009429B9 /* CPGuideController.m */; };
+		55AACED91C58AAF60015420C /* libBaiduMobStatForSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AACED81C58AAF60015420C /* libBaiduMobStatForSDK.a */; };
 		55C586F21C507ECB003BD81F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F11C507ECB003BD81F /* UIKit.framework */; };
 		55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C586F31C507ED3003BD81F /* Foundation.framework */; };
 		55C586FD1C50BE02003BD81F /* CPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C586FB1C50BE02003BD81F /* CPSearchController.m */; };
@@ -154,6 +155,7 @@
 		5561D1831C589C0700545F26 /* BNSoundEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNSoundEventProtocol.h; sourceTree = "<group>"; };
 		5561D1841C589C0700545F26 /* BNStrategyManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNStrategyManagerProtocol.h; sourceTree = "<group>"; };
 		5561D1851C589C0700545F26 /* BNUIManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUIManagerProtocol.h; sourceTree = "<group>"; };
+		55AACED81C58AAF60015420C /* libBaiduMobStatForSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStatForSDK.a; sourceTree = "<group>"; };
 		55C586F11C507ECB003BD81F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55C586F31C507ED3003BD81F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		55C586FA1C50BE02003BD81F /* CPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSearchController.h; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AACED91C58AAF60015420C /* libBaiduMobStatForSDK.a in Frameworks */,
 				555F44DB1C56138C009429B9 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				555F44D31C55B39D009429B9 /* JavaScriptCore.framework in Frameworks */,
 				55C586F41C507ED3003BD81F /* Foundation.framework in Frameworks */,
@@ -502,6 +505,7 @@
 		5561D17B1C589C0700545F26 /* Navi */ = {
 			isa = PBXGroup;
 			children = (
+				55AACED81C58AAF60015420C /* libBaiduMobStatForSDK.a */,
 				5561D17C1C589C0700545F26 /* inc */,
 			);
 			path = Navi;
@@ -971,6 +975,10 @@
 				INFOPLIST_FILE = chargingPile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/chargingPile/Navi",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = weichenchao.chargingPile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -989,6 +997,10 @@
 				INFOPLIST_FILE = chargingPile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/chargingPile/Navi",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = weichenchao.chargingPile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

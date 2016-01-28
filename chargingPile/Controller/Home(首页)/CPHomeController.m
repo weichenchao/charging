@@ -97,7 +97,7 @@
 - (void)setingTableHeaderView {
     self.headerView = [[CPHomeHeaderView alloc]init];
     self.headerView = [[NSBundle mainBundle] loadNibNamed:@"CPHomeHeaderView" owner:self options:nil][0];
-    self.headerView.frame=CGRectMake(0,0,SCREEN_WIDTH,519);
+    self.headerView.frame=CGRectMake(0,0,SCREEN_WIDTH,563);
     //设置代理
     self.headerView.myDelegate = self;
    
@@ -144,7 +144,8 @@
                             @"h3.jpg",
                             @"h4.jpg",
                             ];
-    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:self.headerView.scrollView.bounds imageNamesGroup:imageNames];
+    CGRect frame =CGRectMake(0, self.headerView.bounds.origin.y, self.view.bounds.size.width, 100);
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:frame imageNamesGroup:imageNames];
     [self.headerView.scrollView addSubview:cycleScrollView];
 }
 #pragma mark -懒加载

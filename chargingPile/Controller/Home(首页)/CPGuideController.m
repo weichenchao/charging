@@ -10,8 +10,10 @@
 #import "CPGuideFooterView.h"
 #import "BNRoutePlanModel.h"
 #import "BNCoreServices.h"
-@interface CPGuideController ()<BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate>
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
+@interface CPGuideController ()<BNNaviUIManagerDelegate,BNNaviRoutePlanDelegate>
+@property (nonatomic,strong) CPGuideFooterView *footer;
 @end
 
 @implementation CPGuideController
@@ -59,8 +61,24 @@
     footer.nameLabel.text= self.model.name;
     footer.distanceLabel.text= [NSString stringWithFormat:@"%@",self.model.distance];
     footer.addresslabel.text= self.model.address;
-    [self.view addSubview:footer];
+    self.footer = footer;
+    [self addRouteButton];
+    [self.view addSubview:self.footer];
 
+}//添加路径规划按钮
+- (void)addRouteButton {
+    CGFloat buttonHeiht = 48;
+    CGFloat buttonX = self.view.bounds.size.width-buttonHeiht-20;
+    UIButton *routeButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonX,-24,buttonHeiht,buttonHeiht)];
+    //[routeButton addTarget:self action:@selector(addRoutePlan) forControlEvents:UIControlEventTouchUpInside];
+    [routeButton addTarget:self action:@selector(addRoutePlan) forControlEvents:UIControlEventTouchUpInside];
+    NSString *str = [NSString stringWithFormat:@"跟我走"];
+    [routeButton setTitle:str forState:UIControlStateNormal];
+    [routeButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    routeButton.layer.masksToBounds = YES;
+    routeButton.layer.cornerRadius = 24;
+    [routeButton setBackgroundColor:UIColorFromRGB(0x00adf3)];
+    [self.footer addSubview:routeButton];
 }
 //添加路径规划
 - (void)addRoutePlan {
@@ -137,6 +155,17 @@
     
     //路径规划成功，开始导航
     [BNCoreServices_UI showNaviUI: BN_NaviTypeReal delegete:self isNeedLandscape:YES];
+    //ios8开始，使用UIAlertController，而不是UIAlertView
+    
+    //    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"算路成功" message:@"是否开启导航" preferredStyle:UIAlertControllerStyleAlert];
+    //
+    //    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    //    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    //        [self addNaviPlan];
+    //    }];
+    //    [alertController addAction:cancelAction];
+    //    [alertController addAction:okAction];
+    //    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 //算路失败回调
@@ -155,5 +184,16 @@
 //算路取消
 -(void)routePlanDidUserCanceled:(NSDictionary*)userInfo {
     NSLog(@"算路取消");
+}
+#pragma mark -导航回调
+//退出导航回调
+-(void)onExitNaviUI:(NSDictionary*)extraInfo
+{
+    NSLog(@"退出导航页面");
+}
+//退出导航声明页面回调
+- (void)onExitDeclarationUI:(NSDictionary*)extraInfo
+{
+    NSLog(@"退出导航声明页面");
 }
 @end

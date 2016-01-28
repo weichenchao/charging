@@ -14,7 +14,7 @@
     for (UIImageView *imageView in self.imageViewArray) {
         //将图片做成圆
         imageView.layer.masksToBounds = YES;
-        imageView.layer.cornerRadius = 48;
+        imageView.layer.cornerRadius = 24;
     }
     
 }

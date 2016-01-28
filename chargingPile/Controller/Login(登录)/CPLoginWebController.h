@@ -10,6 +10,6 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "CPWheat.h"
 
-@interface CPLoginWebController : UIViewController<UIWebViewDelegate,WheatProtocol>
+@interface CPLoginWebController : UIViewController<UIWebViewDelegate>
 
 @end

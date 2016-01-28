@@ -18,6 +18,11 @@
 #import "CPSearchController.h"
 #import "CPLocationManager.h"
 #import "CPLoginWebController.h"
+#import "CPGlobaLInfo.h"
+
+//测试
+#import "CPMapBasicController.h"
+#import "CPtestController.h"
 
  static NSString *cellReuseIdentifier = @"CPHomeCell";
 
@@ -39,6 +44,7 @@
  *当前定位的城市
  */
 @property (nonatomic, copy) NSString *currentLocationCityName;
+@property (nonatomic,strong) CPLocationManager *locationManager;
 
 @end
 
@@ -53,9 +59,9 @@
     // 监听定位的城市改变
     [CPNotificationCenter addObserver:self selector:@selector(cityLocationDidChange:) name:CPCityLocationDidChangeNotification object:nil];
     //开始定位
-//    CPLocationManager *locationManager =[CPLocationManager sharedInstance];
-//    [locationManager startLocation];
-//    CPLog(@"%@",locationManager.cityName);
+   self.locationManager =[CPLocationManager sharedInstance];
+    [self.locationManager startLocation];
+    CPLog(@"%@",self.locationManager.cityName);
     
 }
 
@@ -64,11 +70,14 @@
 {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self settingLoginView];
 }
 - (void) viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.locationManager stopLocation];
+    
 }
 #pragma mark -设置tableView
 - (void)setingTableview {
@@ -91,22 +100,11 @@
     self.headerView.frame=CGRectMake(0,0,SCREEN_WIDTH,519);
     //设置代理
     self.headerView.myDelegate = self;
-    //判断是否登录
-    self.headerView.labelView.hidden = YES;
-    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.frame = CGRectMake(94, 44+45-12, 60, 24);
-    [loginButton setTitle:@"登录" forState:UIControlStateNormal];
-    [loginButton setTintColor:[UIColor whiteColor]];
-    [loginButton setImage:[UIImage imageNamed:@"home_right_arrow"] forState:UIControlStateNormal];
-    //实现button文字居左，图片居右
-    CGFloat labelWidth = 30;
-    CGFloat imageWith = 24;
-    loginButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth, 0, -labelWidth);
-    loginButton.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWith, 0, imageWith);
-    [loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+   
+
     //切换城市
     [self.headerView.locationLabelButton setTitle:self.currentLocationCityName forState:UIControlStateNormal];
-    [self.headerView addSubview:loginButton];
+    
     //设置scrollView
     [self setingScrollView];
     [self.headerView.infomationButton addTarget:self action:@selector(clickInformationButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -114,6 +112,30 @@
     [self.headerView.locationLabelButton addTarget:self action:@selector(clickLocationButton) forControlEvents:UIControlEventTouchUpInside];
     [self.headerView.chargeButton addTarget:self action:@selector(clickChargeButton) forControlEvents:UIControlEventTouchUpInside];
     self.tableview.tableHeaderView=self.headerView;
+}
+-(void)settingLoginView {
+    //判断是否登录
+    CPGlobaLInfo *global =[CPGlobaLInfo sharedGlobal];
+    if (global.userModel.phoneNumber ==nil) {
+        self.headerView.labelView.hidden = YES;
+        UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        loginButton.frame = CGRectMake(94, 44+45-12, 60, 24);
+        [loginButton setTitle:@"登录" forState:UIControlStateNormal];
+        [loginButton setTintColor:[UIColor whiteColor]];
+        [loginButton setImage:[UIImage imageNamed:@"home_right_arrow"] forState:UIControlStateNormal];
+        //实现button文字居左，图片居右
+        CGFloat labelWidth = 30;
+        CGFloat imageWith = 24;
+        loginButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth, 0, -labelWidth);
+        loginButton.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWith, 0, imageWith);
+        [loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+        [self.headerView addSubview:loginButton];
+    }else {
+        self.headerView.labelView.hidden = NO;
+        self.headerView.phoneLabel.text = global.userModel.phoneNumber;
+        self.headerView.scoreText.text = global.userModel.userScore;
+        self.headerView.chargeText.text = global.userModel.chargingScore;
+    }
 }
 - (void)setingScrollView {
     // 情景一：采用本地图片实现

@@ -17,13 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      [self addLocationSevice];
+//    //开始定位
+//    CPLocationManager *locationManager =[CPLocationManager sharedInstance];
+//    [locationManager startLocation];
+    self.title = @"ssss";
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [_mapView viewWillAppear];
     
     _mapView.delegate = self;
-    _locService.delegate = self;
+    
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -37,6 +41,7 @@
     self.locService = [[BMKLocationService alloc]init];
     //显示定位的蓝点儿必须先开启定位服务
     [self.locService startUserLocationService];
+    self.locService.delegate = self;
     self.mapView.showsUserLocation = NO;//先关闭显示的定位图层
     self.mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态，地图模式
     //显示定位的蓝点儿
@@ -61,7 +66,7 @@
  */
 - (void)willStartLocatingUser
 {
-    NSLog(@"---CPMapBasicController -start locate");
+    NSLog(@"-------CPMapBasicController -start locate");
 }
 
 /**
@@ -81,10 +86,11 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     self.mapView.showsUserLocation = YES;//显示定位图层
-    self.userLocation = userLocation;
+    self.currentUserLocation = userLocation;
     //NSLog(@"location%@",userLocation.location);
     //动态更新我的位置数，必须有这句话，可以让定位小蓝点出来,但是也有这句话导致地图不能移动
     [_mapView updateLocationData:userLocation];
+    NSLog(@"-------CPMapBasicController");
 }
 /**
  *在地图View停止定位后，会调用此函数

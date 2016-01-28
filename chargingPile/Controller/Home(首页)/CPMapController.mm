@@ -162,7 +162,7 @@
             [annotations addObject:item];
             
             //使用以下函数，注意导入百度地图计算工具包
-            BMKMapPoint point1 = BMKMapPointForCoordinate(self.userLocation.location.coordinate);
+            BMKMapPoint point1 = BMKMapPointForCoordinate(self.currentUserLocation.location.coordinate);
             BMKMapPoint point2 = BMKMapPointForCoordinate(poi.pt);
             CLLocationDistance distance = BMKMetersBetweenMapPoints(point1,point2);
             
@@ -195,8 +195,8 @@
     self.mapView.centerCoordinate = CLLocationCoordinate2DMake(24.495484, 118.184263);
     self.mapView.zoomLevel = 15;
     //self.mapView.showsUserLocation = YES;//显示定位图层
-    [self.mapView updateLocationData:self.userLocation];
-    NSLog(@"self.userLocation.location%@",self.userLocation.location);
+    [self.mapView updateLocationData:self.currentUserLocation];
+    NSLog(@"self.userLocation.location%@",self.currentUserLocation.location);
 
 }
 

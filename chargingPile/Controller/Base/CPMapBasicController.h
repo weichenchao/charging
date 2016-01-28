@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CPLocationManager.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationService.h>
@@ -16,5 +16,5 @@
 @property (nonatomic,strong) BMKMapView* mapView;
 @property (nonatomic,strong) BMKLocationService *locService;
 @property (nonatomic,strong) BMKPoiSearch *searcher;
-@property (nonatomic,strong) BMKUserLocation *userLocation;
+@property (nonatomic,strong) BMKUserLocation *currentUserLocation;
 @end

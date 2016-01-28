@@ -130,7 +130,7 @@
  */
 - (void)didStopLocatingUser
 {
-    
+    NSLog(@"didStopLocatingUser ");
 }
 /**
  *定位失败后，会调用此函数
@@ -139,5 +139,6 @@
 - (void)didFailToLocateUserWithError:(NSError *)error
 {
     [self stopLocation];
+    NSLog(@"cllocantionmanager%@",error);
 }
 @end

@@ -38,16 +38,6 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="177**" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s58-5F-rhX" userLabel="phoneLabel">
-                                    <rect key="frame" x="0.0" y="48" width="65" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="9XI-eE-t2A"/>
-                                        <constraint firstAttribute="width" constant="65" id="wDZ-U2-MBN"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.69512122869491577" green="0.90108227729797363" blue="0.98918622732162476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htU-nC-iU7">
                                     <rect key="frame" x="45" y="24" width="18" height="24"/>
                                     <constraints>
@@ -67,6 +57,16 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="177**" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s58-5F-rhX" userLabel="phoneLabel">
+                                    <rect key="frame" x="0.0" y="48" width="65" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="9XI-eE-t2A"/>
+                                        <constraint firstAttribute="width" constant="65" id="wDZ-U2-MBN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.69512122869491577" green="0.90108227729797363" blue="0.98918622732162476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.6705882352941176" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -195,7 +195,7 @@
                                                 <constraint firstAttribute="height" constant="24" id="Hsj-gB-TS1"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acy-3V-hpk">
@@ -234,7 +234,7 @@
                                                 <constraint firstAttribute="width" constant="42" id="vhJ-W7-3y8"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHc-my-6o6">
@@ -275,7 +275,7 @@
                                                 <constraint firstAttribute="width" constant="42" id="ny7-lM-5dc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-qm-en8">
@@ -316,7 +316,7 @@
                                                 <constraint firstAttribute="width" constant="42" id="MgE-HM-Ehb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQu-6n-jei">
@@ -487,6 +487,7 @@
                 <outlet property="labelView" destination="4B0-Pn-jW2" id="WPa-r4-aL9"/>
                 <outlet property="locationIconButton" destination="Bm6-yK-Ptk" id="4fT-qi-T00"/>
                 <outlet property="locationLabelButton" destination="Ld0-cp-QoO" id="0oR-GY-lJE"/>
+                <outlet property="phoneLabel" destination="s58-5F-rhX" id="UXK-iO-KIU"/>
                 <outlet property="scoreText" destination="p4z-dd-2VP" id="3pm-SM-rl7"/>
                 <outlet property="scrollView" destination="CpH-td-IAm" id="PbL-N2-3wK"/>
                 <outletCollection property="imageViewArray" destination="jN2-eX-125" id="Kga-GM-bL9"/>

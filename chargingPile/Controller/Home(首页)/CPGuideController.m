@@ -21,6 +21,7 @@
     [self addmapview];
     [self addFooter];
     [self addRoutePlan];
+    
 }
 
 
@@ -29,11 +30,11 @@
     BMKMapView* mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-137-64)];
     self.mapView = mapView;
     self.mapView.showsUserLocation = YES;//显示定位图层
-    [self.mapView updateLocationData:self.userLocation];
+    [self.mapView updateLocationData:self.currentUserLocation];
     /*
      *为什么输出是null？？？？？？？？？？？？
      */
-    NSLog(@"CPGuideController%@",self.userLocation.location);
+   // NSLog(@"CPGuideController%@",self.userLocation.location);
     [self.view addSubview:self.mapView];
     self.mapView.isSelectedAnnotationViewFront = YES;
     //地图比例尺显示
@@ -68,8 +69,10 @@
     //起点
     BNRoutePlanNode *startNode = [[BNRoutePlanNode alloc] init];
     startNode.pos = [[BNPosition alloc] init];
-    startNode.pos.x = self.userLocation.location.coordinate.longitude;
-    startNode.pos.y = self.userLocation.location.coordinate.latitude;
+    startNode.pos.x = 118.187397;
+    startNode.pos.y = 24.479582;
+//    startNode.pos.x = self.currentUserLocation.location.coordinate.longitude;
+//    startNode.pos.y = self.currentUserLocation.location.coordinate.latitude;
     startNode.pos.eType = BNCoordinate_BaiduMapSDK;
     [nodesArray addObject:startNode];
     

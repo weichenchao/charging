@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIView *labelView;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViewArray;
 
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UITextField *chargeText;
 @property (weak, nonatomic) IBOutlet UITextField *scoreText;
 

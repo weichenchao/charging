@@ -7,9 +7,12 @@
 //  登录界面
 
 #import "CPLoginWebController.h"
+#import "CPGlobaLInfo.h"
+#import "CPUserModel.h"
 static NSString *kConfirmAlertNotificationName = @"kConfirmAlertNotificationName";
 @interface CPLoginWebController ()
 @property (nonatomic,strong) UIWebView *webView;
+
 @end
 
 @implementation CPLoginWebController
@@ -17,7 +20,7 @@ static NSString *kConfirmAlertNotificationName = @"kConfirmAlertNotificationName
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addTheWebView];
-    [self addObservers];
+    //[self addObservers];
    
 }
 -(void)addTheWebView {
@@ -34,49 +37,66 @@ static NSString *kConfirmAlertNotificationName = @"kConfirmAlertNotificationName
     // 首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）  和JSContext *context =[[JSContext alloc]init]有什么区别
     
     JSContext *context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    
-    CPWheat *wheat = [CPWheat sharedInstance];
      context[@"wheatLogin"] =  ^() {
-//          dispatch_async(dispatch_get_main_queue(), ^{
-//        [self.navigationController popViewControllerAnimated:NO];
-//          });
-         [self.navigationController popViewControllerAnimated:NO];
+          dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:NO];
+        
+          });
+         //获取网页返回的参数,数组只有一个元素，即整个json是一个整体
          NSArray *args = [JSContext currentArguments];
-         for (id obj in args) {
+         for (JSValue * obj in args) {
              NSLog(@"%@",obj);
+            // NSString *dict = [obj toString];
+             NSString *string =[obj toString];
+             NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+             NSDictionary *dict =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+              NSLog(@"111%@",dict);
+             CPGlobaLInfo *global = [CPGlobaLInfo sharedGlobal];
+             CPUserModel *model = [[CPUserModel alloc]init];
+             model.nickName = dict[@"NICK_NAME"];
+             model.phoneNumber = dict[@"PHONE_NO"];
+             model.userScore = dict[@"USER_SCORE"];
+             model.usetLevel = dict[@"USER_LEVEL"];
+             model.chargingScore = dict[@"CHARGING"];
+             global.userModel = model;
+             JSValue *this = [JSContext currentThis];
+             NSLog(@"this: %@",this);
+             NSLog(@"-------End Log-------");
          }
     };
+//    {
+//        CHARGING = 32;
+//        "NICK_NAME" = wheat;
+//        "PHONE_NO" = 18959291480;
+//        "USER_LEVEL" = 11;
+//        "USER_SCORE" = 765;
+//    }
 
-    context[@"Wheat"] =wheat ;
-    context[@"test1"] = ^() {
-        NSArray *args = [JSContext currentArguments];
-        for (id obj in args) {
-            NSLog(@"%@",obj);
-        }
-    };
-    //此处我们没有写后台（但是前面我们已经知道iOS是可以调用js的，我们模拟一下）
-    //首先准备一下js代码，来调用js的函数test1 然后执行
-    //一个参数
-//    NSString *jsFunctStr=@"test1('参数1')";
-//    [context evaluateScript:jsFunctStr];
-    
+//
+//    context[@"Wheat"] =wheat ;
+//    context[@"test1"] = ^() {
+//        NSArray *args = [JSContext currentArguments];
+//        for (id obj in args) {
+//            NSLog(@"%@",obj);
+//        }
+//    };
 }
-- (void)login:(UIViewController *)controller {
-    
-}
-//无法传参的时候可以用block，避免使用通知；可以传参的时候，用JSExport协议
--(void)addObservers {
-    
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    
-    
-    [notificationCenter addObserver:self selector:@selector(didLogin) name:kConfirmAlertNotificationName object:nil];
-    
-}
--(void)didLogin {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
-   
-}
+//- (void)login:(UIViewController *)controller {
+//    
+//}
+////无法传参的时候可以用block，避免使用通知；可以传参的时候，用JSExport协议
+//-(void)addObservers {
+//    
+//    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+//    
+//    
+//    [notificationCenter addObserver:self selector:@selector(didLogin) name:kConfirmAlertNotificationName object:nil];
+//    
+//}
+//-(void)didLogin {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.navigationController popViewControllerAnimated:YES];
+//    });
+//   
+//}
 @end
